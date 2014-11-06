@@ -6,13 +6,16 @@
 #include "globals.h"
 #include "swi_handler.h"
 #include "user_setup.h"
-#include "exit_handler.h"
+#include "syscalls/exit_handler.h"
+#include "syscalls/read.h"
+#include "syscalls/write.h"
 
 #include <arm/psr.h>
 #include <arm/exception.h>
 #include <arm/interrupt.h>
 #include <arm/timer.h>
 
+#include "syscalls/include.h"
 typedef enum {FALSE, TRUE} bool;
 
 uint32_t global_data;
