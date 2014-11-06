@@ -1,0 +1,5 @@
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/exit/exit.o:  \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/exit/exit.S \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/bits/swi.h
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/bits/swi.h:

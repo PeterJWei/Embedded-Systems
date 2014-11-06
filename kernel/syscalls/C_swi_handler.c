@@ -1,5 +1,8 @@
 #include "C_swi_handler.h"
 #include "include.h"
+#include "read.h"
+#include "write.h"
+#include "exit_handler.h"
 /* C_SWI_Handler uses SWI number to call the appropriate function. */
 int C_SWI_Handler(int swiNum, int *regs) {
     int count = 0;

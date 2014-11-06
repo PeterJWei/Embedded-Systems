@@ -1,6 +1,7 @@
-#include "read.h"
 #include "include.h"
+#include "read.h"
 
+extern void exit_handler(int exit_status);
 // read function to replace the system's read function
 ssize_t read_handler(int fd, void *buf, size_t count) {
     // Check for invalid memory range or file descriptors
@@ -14,7 +15,7 @@ ssize_t read_handler(int fd, void *buf, size_t count) {
     char *buffer = (char *) buf;
     char read_char;
 
-    while (i < count) {
+    while ((size_t)i < count) {
         read_char = getc();
 
         if (read_char == 4) { //EOT character

@@ -1,0 +1,24 @@
+ \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/stdio/printf.o:  \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/stdio/printf.c \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/stdio.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/stdarg.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/sys/types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/bits/types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/unistd.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/bits/fileno.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/stdio/doprnt.h
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/stdio.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/stdarg.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/sys/types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/bits/types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/unistd.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/bits/fileno.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/stdio/doprnt.h:

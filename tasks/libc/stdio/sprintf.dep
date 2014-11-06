@@ -1,0 +1,18 @@
+ \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/stdio/sprintf.o:  \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/stdio/sprintf.c \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/stdio.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/stdarg.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/sys/types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/bits/types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/stdio/doprnt.h
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/stdio.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/stdarg.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/sys/types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/bits/types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/stdio/doprnt.h:

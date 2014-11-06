@@ -1,0 +1,32 @@
+/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/read.o:  \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/read.c \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/include.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/uboot/include/exports.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/stdarg.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/uboot/include/_exports.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/bits/errno.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/bits/fileno.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/bits/swi.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../include/types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/read.h
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/include.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/uboot/include/exports.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/stdarg.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/uboot/include/_exports.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/bits/errno.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/bits/fileno.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/bits/swi.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../include/types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/read.h:

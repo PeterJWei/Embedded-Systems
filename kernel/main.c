@@ -16,7 +16,6 @@
 #include <arm/timer.h>
 
 #include "syscalls/include.h"
-typedef enum {FALSE, TRUE} bool;
 
 uint32_t global_data;
 

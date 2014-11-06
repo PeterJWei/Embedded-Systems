@@ -1,0 +1,21 @@
+ \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/stdio/doscan.o:  \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/stdio/doscan.c \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/stdarg.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/sys/types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/bits/types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/ctype.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/inline.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/stdio/doscan.h
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/stdarg.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/sys/types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/bits/types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/ctype.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/inline.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/stdio/doscan.h:

@@ -1,5 +1,11 @@
 #ifndef INCLUDE_H
 #define INCLUDE_H
+#include <exports.h>
+#include <bits/errno.h>
+#include <bits/fileno.h>
+#include <bits/swi.h>
+#include "../include/types.h"
+#include "../globals.h"
 // 0xe59ff014 (LDR pc, [pc, 0x14]) --> 0x014 through masking
 #define SWI_VECT_ADDR 0x08
 #define PC_OFFSET 0x08

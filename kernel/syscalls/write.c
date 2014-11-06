@@ -1,5 +1,7 @@
-#include "write.h"
 #include "include.h"
+#include "write.h"
+
+extern void exit_handler(int exit_status);
 // write function to replace the system's write function
 ssize_t write_handler(int fd, const void *buf, size_t count) {
 
@@ -14,7 +16,7 @@ ssize_t write_handler(int fd, const void *buf, size_t count) {
     char *buffer = (char *) buf;
     int i;
     char read_char;
-    for (i = 0; i < count; i++) {
+    for (i = 0; (size_t)i < count; i++) {
         // put character into buffer and putc
         read_char = buffer[i];
         putc(read_char);

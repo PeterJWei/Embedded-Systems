@@ -1,0 +1,12 @@
+ \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/string/strcpy.o:  \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/string/strcpy.c \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/string.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/sys/types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/bits/types.h
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/string.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/sys/types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/tasks/libc/include/bits/types.h:
