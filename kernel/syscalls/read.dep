@@ -9,6 +9,7 @@
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/bits/fileno.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/bits/swi.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../include/types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../globals.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/read.h
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/include.h:
@@ -28,5 +29,7 @@
 /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/bits/swi.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../include/types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../globals.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/read.h:

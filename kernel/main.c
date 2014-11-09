@@ -22,19 +22,29 @@ uint32_t global_data;
 /* Checks the SWI Vector Table. */
 bool check_swi_vector() {
     int swi_vector_instr = *((int *)SWI_VECT_ADDR);
-
     // Check if the offset is negative.
     if ((swi_vector_instr & LDR_SIGN_MASK) == 0) {
         return FALSE;
     }
-
     // Check that the instruction is a (LDR pc, [pc, 0x000])
     if ((swi_vector_instr & 0xFFFFF000) != LDR_PC_PC_INSTR) {
         return FALSE;
     }
-
     return TRUE;
 }
+
+/*bool check_irq_vector() {
+    int irq_vector_instr = *((int *)IRQ_VECT_ADDR);
+    // Check if the offset is negative.
+    if ((irq_vector_instr & LDR_SIGN_MASK) == 0) {
+        return FALSE;
+    }
+    // Check that the instruction is a (LDR pc, [pc, 0x000])
+    if ((irq_vector_instr & 0xFFFFF000) != LDR_PC_PC_INSTR) {
+        return FALSE;
+    }
+    return TRUE;
+}*/
 
 int kmain(int argc, char** argv, uint32_t table) {
     app_startup(); /* Note that app_startup() sets all uninitialized and */ 
@@ -72,7 +82,8 @@ int kmain(int argc, char** argv, uint32_t table) {
     }
     *spTop = argc;
 
-
+    printf("got here\n");
+    getc();
     /** Jump to user program. **/
     int usr_prog_status = user_setup(spTop);
 

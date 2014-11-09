@@ -10,6 +10,7 @@
 
 #include <unistd.h>
 #include <bits/fileno.h>
+#include <stdio.h>
 
 #define MAX_BUFFER 1024
 
