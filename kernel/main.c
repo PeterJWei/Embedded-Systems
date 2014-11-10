@@ -7,6 +7,7 @@
 #include "swi_handler.h"
 #include "irq_handler.h"
 #include "user_setup.h"
+#include "ic_setup.h"
 #include "syscalls/exit_handler.h"
 #include "syscalls/read.h"
 #include "syscalls/write.h"
@@ -59,6 +60,7 @@ int kmain(int argc, char** argv, uint32_t table) {
         return BAD_CODE;
     }
 
+    ic_setup();
     /** Wire in the SWI and IRQ handlers. **/
     // Jump offset already incorporates PC offset. Usually 0x10 or 0x14.
     int jmp_offset_swi = (*((int *) SWI_VECT_ADDR))&(0xFFF);
