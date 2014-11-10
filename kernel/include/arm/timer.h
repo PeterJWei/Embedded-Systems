@@ -41,7 +41,7 @@
 /* Add your C code here.  Put your group name at the top! */
 void addTimer(int a);
 void initializeTimer();
-unsigned int get_clock_time();
+unsigned int get_clock();
 
 #endif /* ASSEMBLER */
 
