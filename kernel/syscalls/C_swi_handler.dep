@@ -14,6 +14,8 @@
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../globals.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/read.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/write.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/time.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/sleep.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/exit_handler.h
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/C_swi_handler.h:
@@ -41,5 +43,9 @@
 /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/read.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/write.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/time.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/sleep.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/exit_handler.h:
