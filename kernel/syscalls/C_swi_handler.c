@@ -19,6 +19,12 @@ int C_SWI_Handler(int swiNum, int *regs) {
         case EXIT_SWI:
             exit_handler((int) regs[0]); // never returns
             break;
+	case TIME_SWI:
+	    count = time();
+	    break;
+	case SLEEP_SWI:
+	    sleep((int)regs[0]);
+	    break;
         default:
             printf("Error in ref C_SWI_Handler: Invalid SWI number.");
             exit_handler(BAD_CODE); // never returns
