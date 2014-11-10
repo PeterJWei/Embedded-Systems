@@ -35,7 +35,7 @@ user_setup:
 
     @ set up user stack from spTop passed in from kernel.c
     mov     sp, r0
-
+    swi     #0x900006
     ldr     pc, =0xa0000000
     @ go to user program
     @ldr     pc, =0xa0000000

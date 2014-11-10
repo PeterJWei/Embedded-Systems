@@ -9,6 +9,7 @@
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/bits/swi.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/globals.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/swi_handler.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/irq_handler.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/user_setup.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/exit_handler.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/read.h \
@@ -39,6 +40,8 @@
 /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/globals.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/swi_handler.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/irq_handler.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/user_setup.h:
 

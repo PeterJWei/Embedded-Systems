@@ -8,6 +8,7 @@
 #include "../globals.h"
 // 0xe59ff014 (LDR pc, [pc, 0x14]) --> 0x014 through masking
 #define SWI_VECT_ADDR 0x08
+#define IRQ_VECT_ADDR 0x18
 #define PC_OFFSET 0x08
 
 // Cannot write to this address. kernel.bin loaded here. Stack grows down.
