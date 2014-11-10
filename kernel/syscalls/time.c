@@ -10,5 +10,4 @@
 
 unsigned long time() {
 	return get_clock();
-	//return (clock_overflows*MS_PER_OVERFLOW)+ get_ms(reg_read(OSTMR_OSCR_ADDR));
 }
