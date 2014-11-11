@@ -8,6 +8,7 @@
 #include "irq_handler.h"
 #include "user_setup.h"
 #include "ic_setup.h"
+#include "check_ic.h"
 #include "syscalls/exit_handler.h"
 #include "syscalls/read.h"
 #include "syscalls/write.h"
@@ -63,27 +64,22 @@ int kmain(int argc, char** argv, uint32_t table) {
     printf("got here\n");
     getc();
     ic_setup();
+    check_ic();
     /** Wire in the SWI and IRQ handlers. **/
     // Jump offset already incorporates PC offset. Usually 0x10 or 0x14.
     int jmp_offset_swi = (*((int *) SWI_VECT_ADDR))&(0xFFF);
     int jmp_offset_irq = (*((int *) IRQ_VECT_ADDR))&(0xFFF);
 
-    printf("got here\n");
-    getc();
     // &S_Handler" in Jump Table.
     int *swi_handler_addr = *(int **)(SWI_VECT_ADDR + PC_OFFSET + jmp_offset_swi);
     int *irq_handler_addr = *(int **)(IRQ_VECT_ADDR + PC_OFFSET + jmp_offset_irq);
 
-    printf("got here\n");
-    getc();
     // Save original Uboot SWI handler instructions.
     int swi_instr_1 = *swi_handler_addr;
     int swi_instr_2 = *(swi_handler_addr + 1);
     int irq_instr_1 = *irq_handler_addr;
     int irq_instr_2 = *(irq_handler_addr + 1);
 
-    printf("got here\n");
-    getc();
     // Wire in our own: LDR pc, [pc, #-4] = 0xe51ff004
     *swi_handler_addr = 0xe51ff004;
     *(swi_handler_addr + 1) = (int) &swi_handler; // New swi handler.
@@ -99,8 +95,6 @@ int kmain(int argc, char** argv, uint32_t table) {
     }
     *spTop = argc;
 
-    printf("got here\n");
-    getc();
     /** Jump to user program. **/
     int usr_prog_status = user_setup(spTop);
 
@@ -111,5 +105,6 @@ int kmain(int argc, char** argv, uint32_t table) {
     *irq_handler_addr = irq_instr_1;
     *(irq_handler_addr + 1) = irq_instr_2;
 
+    check_ic();
     return usr_prog_status;
 }

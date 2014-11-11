@@ -6,6 +6,7 @@
 /* C_IRQ_Handler */
 void C_IRQ_Handler() {
     printf("hello from IRQ handler!\n");
+    getc();
     /*switch (swiNum) {
         // ssize_t read(int fd, void *buf, size_t count);
         case READ_SWI:
