@@ -5,13 +5,14 @@ volatile uint32_t timer;
 
 
 void initializeTimer() {
-	timer=0;
+//	timer=0;
 }
 
 void addTimer(int time) {
-	timer+=time;
+//	timer+=time;
 }
 
 unsigned int get_clock() {
-	return timer;
+//	return timer;
+    return 0;
 }
