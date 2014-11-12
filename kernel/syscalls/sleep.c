@@ -6,6 +6,6 @@
 #define OVERFLOW_MS ((UINT_MAX / OSTMR_FREQ) * 1000)
 
 void sleep(unsigned long ms) {
-   unsigned long end_time = get_clock() -4 + ms;
+   unsigned long end_time = get_clock() + ms;
    while (end_time!=get_clock());
 }
