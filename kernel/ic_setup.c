@@ -14,7 +14,7 @@ void ic_setup() {
     uint32_t clear_ic_level = set_ic_mask;
     reg_clear(INT_ICLR_ADDR, clear_ic_level);
 
-    reg_write(OSTMR_OSMR_ADDR(0), 0xF00);
+    reg_write(OSTMR_OSMR_ADDR(0), 3686400);
 
     uint32_t clear_os_timer_regs = 0x0;
     reg_write(OSTMR_OSMR_ADDR(1), clear_os_timer_regs);

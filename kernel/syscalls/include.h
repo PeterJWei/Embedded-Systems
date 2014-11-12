@@ -7,6 +7,8 @@
 #include "../include/types.h"
 #include "../globals.h"
 #include "../include/arm/reg.h"
+#include "../include/arm/timer.h"
+#include "../include/arm/interrupt.h"
 // 0xe59ff014 (LDR pc, [pc, 0x14]) --> 0x014 through masking
 #define SWI_VECT_ADDR 0x08
 #define IRQ_VECT_ADDR 0x18

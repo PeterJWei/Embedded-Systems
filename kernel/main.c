@@ -62,7 +62,6 @@ int kmain(int argc, char** argv, uint32_t table) {
     }
 
     ic_setup();
-    check_ic();
     
     /** Wire in the SWI and IRQ handlers. **/
     // Jump offset already incorporates PC offset. Usually 0x10 or 0x14.
@@ -97,17 +96,13 @@ int kmain(int argc, char** argv, uint32_t table) {
 
     /** Jump to user program. **/
     int usr_prog_status = 0;
-    printf("what?\n");
     usr_prog_status = user_setup(spTop);
-    printf("what?\n");
-
 
     /** Restore SWI Handler. **/
     *swi_handler_addr = swi_instr_1;
     *(swi_handler_addr + 1) = swi_instr_2;
     *irq_handler_addr = irq_instr_1;
     *(irq_handler_addr + 1) = irq_instr_2;
-
     check_ic();
     return usr_prog_status;
 }
