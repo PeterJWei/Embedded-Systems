@@ -21,6 +21,8 @@ user_setup:
     @ Save gp registers, lr, and cpsr so that we can return to kernel main later.
     stmfd   sp!, {r1-r12, lr}
     mrs     r2, cpsr
+    bic     r2, r2, #0x80
+    msr     cpsr, r2
     stmfd   sp!, {r2}
 
     @ Save the stack pointer in a global variable for exit_handler.S.

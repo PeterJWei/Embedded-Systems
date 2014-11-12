@@ -4,6 +4,9 @@
 
 #define MS_PER_OVERFLOW ((uint32_t) ((UINT_MAX /OSTMR_FREQ)*1000u))
 
+extern unsigned long curr_time;
+extern volatile unsigned long global_timer;
 unsigned long time() {
-    return get_clock();
+    curr_time = global_timer;
+    return global_timer;
 }

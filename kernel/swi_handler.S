@@ -34,14 +34,13 @@ swi_handler:
 
     @ go to handler
     bl      C_SWI_Handler
-
     @ restore spsr
     ldr     r2, [sp, #14*4]
     msr     spsr, r2
 
-    mrs     r3, cpsr
-    orr     r3, #0x80
-    msr     cpsr, r3
+@    mrs     r3, cpsr
+@    orr     r3, #0x80
+@    msr     cpsr, r3
     @ Discard the r0 on the stack (r0 has ret value).
     add     sp, sp, #4
     ldmfd   sp!, {r1-r12, lr}

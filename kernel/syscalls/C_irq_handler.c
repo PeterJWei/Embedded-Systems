@@ -4,10 +4,10 @@
 #include "write.h"
 #include "exit_handler.h"
 /* C_IRQ_Handler */
-extern int global_timer;
+extern volatile unsigned long global_timer;
+extern int period;
 void C_IRQ_Handler() {
     uint32_t mr = reg_read(OSTMR_OSMR_ADDR(0));
-    reg_write(OSTMR_OSMR_ADDR(0), mr + 3686400);
+    reg_write(OSTMR_OSMR_ADDR(0), mr + period);
     global_timer++;
-    printf("global timer! %d\n", global_timer);
 }

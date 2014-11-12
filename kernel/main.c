@@ -21,7 +21,9 @@
 #include "syscalls/include.h"
 
 uint32_t global_data;
-extern unsigned long global_timer;
+extern volatile unsigned long global_timer;
+extern unsigned long curr_time;
+extern int period;
 /* Checks the SWI Vector Table. */
 bool check_swi_vector() {
     int swi_vector_instr = *((int *)SWI_VECT_ADDR);
@@ -55,13 +57,14 @@ int kmain(int argc, char** argv, uint32_t table) {
 		/* any implications on code executed before this. */
     global_data = table;
     global_timer = 0;
+    curr_time = 0;
+    period = 36864;
     /* Add your code here */
 
     if (check_swi_vector() == FALSE || check_irq_vector() == FALSE) {
         return BAD_CODE;
     }
 
-    ic_setup();
     
     /** Wire in the SWI and IRQ handlers. **/
     // Jump offset already incorporates PC offset. Usually 0x10 or 0x14.
@@ -96,6 +99,7 @@ int kmain(int argc, char** argv, uint32_t table) {
 
     /** Jump to user program. **/
     int usr_prog_status = 0;
+    ic_setup();
     usr_prog_status = user_setup(spTop);
 
     /** Restore SWI Handler. **/

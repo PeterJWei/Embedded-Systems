@@ -7,4 +7,6 @@
 
 int user_setup_stack_ptr;
 int irq_setup_stack_ptr;
-unsigned long global_timer;
+volatile unsigned long global_timer;
+unsigned long curr_time;
+int period;

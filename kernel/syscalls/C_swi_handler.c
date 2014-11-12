@@ -5,6 +5,7 @@
 #include "time.h"
 #include "sleep.h"
 #include "exit_handler.h"
+#include "../check_ic.h"
 /* C_SWI_Handler uses SWI number to call the appropriate function. */
 int C_SWI_Handler(int swiNum, int *regs) {
     int count = 0;
@@ -23,6 +24,7 @@ int C_SWI_Handler(int swiNum, int *regs) {
             break;
 	case TIME_SWI:
 	    count = time();
+//            printf("got count: %d\n", (unsigned int)count);
 	    break;
 	case SLEEP_SWI:
 	    sleep((int)regs[0]);
@@ -31,6 +33,5 @@ int C_SWI_Handler(int swiNum, int *regs) {
             printf("Error in ref C_SWI_Handler: Invalid SWI number.");
             exit_handler(BAD_CODE); // never returns
     }
-
     return count;
 }
