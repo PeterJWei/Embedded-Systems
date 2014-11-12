@@ -21,7 +21,7 @@
 #include "syscalls/include.h"
 
 uint32_t global_data;
-extern int global_timer;
+extern unsigned long global_timer;
 /* Checks the SWI Vector Table. */
 bool check_swi_vector() {
     int swi_vector_instr = *((int *)SWI_VECT_ADDR);
