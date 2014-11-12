@@ -15,6 +15,8 @@
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../include/arm/reg.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/inline.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../include/arm/../types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../include/arm/timer.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../include/arm/interrupt.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/read.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/write.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/time.h \
@@ -48,6 +50,10 @@
 /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/inline.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../include/arm/../types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../include/arm/timer.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../include/arm/interrupt.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/read.h:
 

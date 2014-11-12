@@ -1,7 +1,7 @@
 #include <arm/timer.h>
 #include <arm/reg.h>
 
-volatile uint32_t timer;
+extern volatile unsigned long global_timer;
 
 
 void initializeTimer() {
@@ -13,6 +13,5 @@ void addTimer(int time) {
 }
 
 unsigned int get_clock() {
-//	return timer;
-    return 0;
+    return global_timer;
 }

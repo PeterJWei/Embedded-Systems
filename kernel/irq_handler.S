@@ -11,9 +11,8 @@ irq_handler:
     ldr     sp, =0xa0800000
     stmfd   sp!, {r0-r12, lr}
 
-    bl      ack_intr
-    bl      printvar   
     bl      C_IRQ_Handler
+    bl      ack_intr
 
     ldmfd   sp!, {r0-r12, lr}
     movs    pc, lr

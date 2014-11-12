@@ -25,7 +25,9 @@
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../include/types.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../globals.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../include/arm/reg.h \
-  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../include/arm/../types.h
+  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../include/arm/../types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../include/arm/timer.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../include/arm/interrupt.h
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/uboot/include/exports.h:
 
@@ -78,3 +80,7 @@
 /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../include/arm/reg.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../include/arm/../types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../include/arm/timer.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/syscalls/../include/arm/interrupt.h:

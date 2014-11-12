@@ -16,6 +16,9 @@ swi_handler:
     sub     sp, sp, #4
     stmfd   sp!, {r0-r12, lr}
 
+    mrs     r3, cpsr
+    bic     r3, #0x80
+    msr     cpsr, r3
     @ get spsr into general purpose (gp) registers
     mrs     r2, spsr
 
@@ -36,6 +39,9 @@ swi_handler:
     ldr     r2, [sp, #14*4]
     msr     spsr, r2
 
+    mrs     r3, cpsr
+    orr     r3, #0x80
+    msr     cpsr, r3
     @ Discard the r0 on the stack (r0 has ret value).
     add     sp, sp, #4
     ldmfd   sp!, {r1-r12, lr}
