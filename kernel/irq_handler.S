@@ -8,11 +8,11 @@
 
     .global irq_handler
 irq_handler:
-    mov     sp, #0xa4000000
+    ldr     sp, =0xa0800000
     stmfd   sp!, {r0-r12, lr}
 
     bl      ack_intr
-    
+    bl      printvar   
     bl      C_IRQ_Handler
 
     ldmfd   sp!, {r0-r12, lr}
