@@ -21,7 +21,7 @@
 #include "syscalls/include.h"
 
 uint32_t global_data;
-
+extern int global_timer;
 /* Checks the SWI Vector Table. */
 bool check_swi_vector() {
     int swi_vector_instr = *((int *)SWI_VECT_ADDR);
@@ -54,17 +54,16 @@ int kmain(int argc, char** argv, uint32_t table) {
 		/* zero global variables to zero. Make sure to consider */
 		/* any implications on code executed before this. */
     global_data = table;
-
+    global_timer = 0;
     /* Add your code here */
 
     if (check_swi_vector() == FALSE || check_irq_vector() == FALSE) {
         return BAD_CODE;
     }
 
-    printf("got here\n");
-    getc();
     ic_setup();
     check_ic();
+    
     /** Wire in the SWI and IRQ handlers. **/
     // Jump offset already incorporates PC offset. Usually 0x10 or 0x14.
     int jmp_offset_swi = (*((int *) SWI_VECT_ADDR))&(0xFFF);
@@ -74,6 +73,7 @@ int kmain(int argc, char** argv, uint32_t table) {
     int *swi_handler_addr = *(int **)(SWI_VECT_ADDR + PC_OFFSET + jmp_offset_swi);
     int *irq_handler_addr = *(int **)(IRQ_VECT_ADDR + PC_OFFSET + jmp_offset_irq);
 
+    printf("%#x %#x\n", (unsigned int)swi_handler_addr, (unsigned int)irq_handler_addr);
     // Save original Uboot SWI handler instructions.
     int swi_instr_1 = *swi_handler_addr;
     int swi_instr_2 = *(swi_handler_addr + 1);
@@ -84,7 +84,7 @@ int kmain(int argc, char** argv, uint32_t table) {
     *swi_handler_addr = 0xe51ff004;
     *(swi_handler_addr + 1) = (int) &swi_handler; // New swi handler.
     *irq_handler_addr = 0xe51ff004;
-    *(irq_handler_addr + 1) = (int) &irq_handler; // New swi handler.
+    *(irq_handler_addr + 1) = (int) &irq_handler; // New irq handler.
 
     // Copy argc and argv to user stack in the right order.
     int *spTop = ((int *) USER_STACK_TOP) - 1;
@@ -96,7 +96,8 @@ int kmain(int argc, char** argv, uint32_t table) {
     *spTop = argc;
 
     /** Jump to user program. **/
-    int usr_prog_status = user_setup(spTop);
+    int usr_prog_status = 0;
+    usr_prog_status = user_setup(spTop);
 
 
     /** Restore SWI Handler. **/

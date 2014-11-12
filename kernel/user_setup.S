@@ -26,7 +26,6 @@ user_setup:
     @ Save the stack pointer in a global variable for exit_handler.S.
     ldr     r2, =user_setup_stack_ptr
     str     sp, [r2] @ *user_setup_stack_ptr = sp
-
     @ change mode to USER
     mrs     r2, cpsr
     orr     r2, r2, #0x040  @ Mask the flag bits.

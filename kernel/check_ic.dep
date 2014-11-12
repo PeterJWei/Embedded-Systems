@@ -1,5 +1,5 @@
-/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/ic_setup.o:  \
- /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/ic_setup.c \
+/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/check_ic.o:  \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/check_ic.c \
   /home/peter/Desktop/Embedded-Systems/lab3-support/uboot/include/exports.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/types.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/stdarg.h \
@@ -9,8 +9,7 @@
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/arm/reg.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/inline.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/arm/../types.h \
-  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/types.h \
-  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/enable_irq.h
+  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/types.h
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/uboot/include/exports.h:
 
@@ -31,5 +30,3 @@
 /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/arm/../types.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/types.h:
-
-/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/enable_irq.h:

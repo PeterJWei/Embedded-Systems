@@ -1,5 +1,5 @@
-/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/ic_setup.o:  \
- /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/ic_setup.c \
+/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/ack_intr.o:  \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/ack_intr.c \
   /home/peter/Desktop/Embedded-Systems/lab3-support/uboot/include/exports.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/types.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/stdarg.h \

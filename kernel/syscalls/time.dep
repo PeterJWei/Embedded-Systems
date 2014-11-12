@@ -3,7 +3,8 @@
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/types.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/arm/timer.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/arm/reg.h \
-  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/inline.h
+  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/inline.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/arm/../types.h
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/types.h:
 
@@ -12,3 +13,5 @@
 /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/arm/reg.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/inline.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/arm/../types.h:
