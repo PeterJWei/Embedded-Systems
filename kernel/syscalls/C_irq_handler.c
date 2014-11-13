@@ -9,5 +9,5 @@ extern int period;
 void C_IRQ_Handler() {
     uint32_t mr = reg_read(OSTMR_OSMR_ADDR(0));
     reg_write(OSTMR_OSMR_ADDR(0), mr + period);
-    global_timer++;
+    global_timer += 10;
 }
