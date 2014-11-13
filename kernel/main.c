@@ -75,7 +75,6 @@ int kmain(int argc, char** argv, uint32_t table) {
     int *swi_handler_addr = *(int **)(SWI_VECT_ADDR + PC_OFFSET + jmp_offset_swi);
     int *irq_handler_addr = *(int **)(IRQ_VECT_ADDR + PC_OFFSET + jmp_offset_irq);
 
-    printf("%#x %#x\n", (unsigned int)swi_handler_addr, (unsigned int)irq_handler_addr);
     // Save original Uboot SWI handler instructions.
     int swi_instr_1 = *swi_handler_addr;
     int swi_instr_2 = *(swi_handler_addr + 1);
@@ -107,6 +106,5 @@ int kmain(int argc, char** argv, uint32_t table) {
     *(swi_handler_addr + 1) = swi_instr_2;
     *irq_handler_addr = irq_instr_1;
     *(irq_handler_addr + 1) = irq_instr_2;
-    check_ic();
     return usr_prog_status;
 }

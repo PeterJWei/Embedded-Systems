@@ -1,6 +1,8 @@
 @ user_setup.S: helper function written in asm called from kernel
 @
 @ Author: Anand Pattabiraman <apattabi@andrew.cmu.edu>
+@ and Group 17
+@ Peter Wei (pwei) and Vruti Sivakumaran (vsivakum)
 @ Date:   Wed, 29 Oct 2014
 @
 @ Hint:
@@ -21,7 +23,7 @@ user_setup:
     @ Save gp registers, lr, and cpsr so that we can return to kernel main later.
     stmfd   sp!, {r1-r12, lr}
     mrs     r2, cpsr
-    bic     r2, r2, #0x80
+    bic     r2, r2, #0x80 @CLEAR IRQ BIT
     msr     cpsr, r2
     stmfd   sp!, {r2}
 
@@ -31,7 +33,7 @@ user_setup:
     @ change mode to USER
     mrs     r2, cpsr
     orr     r2, r2, #0x040  @ Mask the flag bits.
-    bic     r2, r2, #0x083  @ Change mode bits to user.
+    bic     r2, r2, #0x083  @ Change mode bits to user AND CLEAR IRQ BIT
     msr     cpsr, r2
 
     @ set up user stack from spTop passed in from kernel.c

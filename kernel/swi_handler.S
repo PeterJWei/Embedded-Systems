@@ -1,6 +1,8 @@
 @ swi_handler.S: SWI Handler
 @
 @ Author: Harry Q Bovik <hqbovik@andrew.cmu.edu>
+@ and Group 17
+@ Peter Wei (pwei) and Vruti Sivakumaran (vsivakum)
 @ Date:   Tue, 23 Oct 2007 11:20:33 -0400
 @
 @ Hint: To change the SWI handler in class, we need to accommodate a return
