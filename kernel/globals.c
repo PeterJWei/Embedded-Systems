@@ -2,6 +2,8 @@
  * globals.c: Defines the global variables
  *
  * Author: Mike Kasick <mkasick@andrew.cmu.edu>
+ * and Group 17
+ * Peter Wei (pwei) and Vruti Sivakumaran (vsivakum)
  * Date:   Sun, 07 Oct 2007 01:31:00 -0400
  */
 
