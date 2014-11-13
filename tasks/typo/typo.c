@@ -3,6 +3,11 @@
  * @brief Echos characters back with timing data.
  *
  * Links to libc.
+ * 
+ * Group 17
+ * 
+ * Names: Peter Wei <pwei@andrew.cmu.edu>
+ *	  Vruti Sivakumaran <vsivakum@andrew.cmu.edu>
  */
 
 #include <unistd.h>
@@ -10,13 +15,12 @@
 
 int main(int argc, char** argv)
 {
-	/* Add code here -- put your names at the top. */
-
 	char b[255];
 	int r;
 	unsigned long start, total, s, sd;
 
 	while(1) {
+		//Display prompt and record start time
 		printf("Enter text >");
 		start = time();
 		
@@ -35,7 +39,6 @@ int main(int argc, char** argv)
                 printf(".");
                 printf("%lu", sd);
                 printf("s\n");
-//		printf("%s\n%d.%d\n", b,s, sd);
 	}
 
 	return 0;

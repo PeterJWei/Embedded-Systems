@@ -4,7 +4,7 @@
  *
  * Links to libc.
  * 
- *
+ * Group 17
  * Names: Peter Wei <pwei@andrew.cmu.edu>
  *        Vruti Sivakumaran <vsivakum@andrew.cmu.edu>
  */
@@ -14,13 +14,15 @@
 
 int main(int argc, char** argv)
 {
-	/* Add code here -- put your names at the top. */
+	//All the symbols to be printed
 	char s[] = {'|', '/', '-', '\\'};
 	int i = 1;
-
+	
+	//Initial cursor
 	putchar('|');
 	sleep(200);
 
+	//Loop and switch cursor every 200ms
 	while (1) {
 	   putchar('\b');
 	   putchar(s[i]);
