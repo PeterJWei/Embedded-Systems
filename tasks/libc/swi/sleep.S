@@ -1,14 +1,16 @@
-/** @file sleep.S
- *
- * @brief sleep sycall wrapper
- *
- * @author Kartik Subramanian <ksubrama@andrew.cmu.edu>
- * @date 2008-10-31
- */
+@ sleep.S: sleep sycall wrapper
+@
+@ Authors: Group Member 1 <email address>
+@          Group Member 2 <email address>
+@ Date:    The current time & date
 
-#include <asm.h>
+#include <bits/swi.h>
 
-	.file "sleep.S"
+	.file	"sleep.S"
+	.text
 
-FUNC(sleep)
-	@ Add code here.  Put your names at the top.
+	.global	sleep
+@void sleep(unsigned int ms);
+sleep:
+    swi SLEEP_SWI @make the system call
+    mov pc, lr

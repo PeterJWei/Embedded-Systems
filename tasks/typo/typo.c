@@ -13,15 +13,16 @@ int main(int argc, char** argv)
 	/* Add code here -- put your names at the top. */
 
 	char b[255];
-	int r, s, sd;
-	unsigned long start, total;
+	int r;
+	unsigned long start, total, s, sd;
 
 	while(1) {
-		print("Enter text >");
+		printf("Enter text >");
 		start = time();
 		
 		//read input and null terminate
 		r=read(STDIN_FILENO, b, 255);
+                write(STDOUT_FILENO, b, r);
 		if (r<1) continue;
 		b[r-1] = 0;
 
@@ -30,7 +31,11 @@ int main(int argc, char** argv)
 		s = total/1000;
 		sd = (total - (s*1000))/100;
 
-		printf("%s\n%d.%d\n", b,s, sd);
+                printf("%lu", s);
+                printf(".");
+                printf("%lu", sd);
+                printf("s\n");
+//		printf("%s\n%d.%d\n", b,s, sd);
 	}
 
 	return 0;

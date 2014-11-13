@@ -42,6 +42,12 @@ int main(int argc, char** argv) {
     /* Part 2 requirement. */
     echo(argc, argv);
 
+//    printf("prehere\n");
+//    sleep(5);
+ 
+//    unsigned long t = (unsigned long)time();
+//    printf("%lu", t);
+//    printf("%lu here\n", t);
 /*    char* usage_message = "Welcome to rot13. You can exit with no input.\n";
     int message_len = string_length(usage_message);
     write(STDOUT_FILENO, (const void *) usage_message, message_len);*/

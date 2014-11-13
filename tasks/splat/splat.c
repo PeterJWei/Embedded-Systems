@@ -18,12 +18,12 @@ int main(int argc, char** argv)
 	char s[] = {'|', '/', '-', '\\'};
 	int i = 1;
 
-	putcha('|');
+	putchar('|');
 	sleep(200);
 
 	while (1) {
 	   putchar('\b');
-	   putchar(symbols[i]);
+	   putchar(s[i]);
 
 	   if (++i == 4) i=0;
 	   sleep(200);

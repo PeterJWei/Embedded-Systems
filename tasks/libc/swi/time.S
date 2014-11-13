@@ -1,14 +1,16 @@
-/** @file time.S
- *
- * @brief time sycall wrapper
- *
- * @author Kartik Subramanian <ksubrama@andrew.cmu.edu>
- * @date 2008-10-31
- */
+@ time.S: time sycall wrapper
+@
+@ Authors: Group Member 1 <email address>
+@          Group Member 2 <email address>
+@ Date:    The current time & date
 
-#include <asm.h>
+#include <bits/swi.h>
 
-	.file "time.S"
+	.file	"time.S"
+	.text
 
-FUNC(time)
-	@ Add code here.  Put your name at the top.
+	.global	time
+@unsigned long time();
+time:
+    swi TIME_SWI @make the system call
+    mov pc, lr
