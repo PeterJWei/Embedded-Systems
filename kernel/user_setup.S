@@ -14,6 +14,7 @@
 @   CPSR_SVC = 0x10011 -> CPSR_USER = 0x10000
 
     .extern user_setup_stack_ptr
+    .extern global_data
 
     .file   "user_setup.S"
     .text
@@ -37,6 +38,9 @@ user_setup:
     msr     cpsr, r2
 
     @ set up user stack from spTop passed in from kernel.c
+    ldr     r8, =global_data @reload r8
+    ldr     r8, [r8]
+
     mov     sp, r0
     ldr     pc, =0xa0000000
     @ go to user program

@@ -9,6 +9,7 @@
 @   value from the C_SWI_Handler.
 
     .extern C_SWI_Handler
+    .extern global_data
 
     .file   "swi_handler.S"
     .text
@@ -17,6 +18,9 @@
 swi_handler:
     sub     sp, sp, #4
     stmfd   sp!, {r0-r12, lr}
+
+    ldr     r8, =global_data @reload r8
+    ldr     r8, [r8]
 
     mrs     r3, cpsr
     bic     r3, #0x80
