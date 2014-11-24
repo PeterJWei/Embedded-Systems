@@ -1,0 +1,5 @@
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/start.o:  \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/start.S \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/asm.h
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/asm.h:

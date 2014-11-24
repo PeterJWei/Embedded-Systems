@@ -1,0 +1,21 @@
+ \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/stdio/putchar.o:  \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/stdio/putchar.c \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/include/stdio.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/include/stdarg.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/include/sys/types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/include/bits/types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/include/unistd.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/include/bits/fileno.h
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/include/stdio.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/include/stdarg.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/include/sys/types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/include/bits/types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/include/unistd.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/include/bits/fileno.h:

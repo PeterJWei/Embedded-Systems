@@ -1,0 +1,30 @@
+ \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/lock/mutex.o:  \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/lock/mutex.c \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/lock.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/task.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/config.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/sched.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/errno.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/psr.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/inline.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/exception.h
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/lock.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/task.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/config.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/sched.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/errno.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/psr.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/inline.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/exception.h:

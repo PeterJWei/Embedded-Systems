@@ -1,0 +1,72 @@
+ \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/time.o:  \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/time.c \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/config.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/errno.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/timer.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/syscall.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/task.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/reg.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/../types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/../inline.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/include.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/uboot/include/exports.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/stdarg.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/uboot/include/_exports.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/fileno.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/swi.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../globals.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/reg.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/timer.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/interrupt.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/psr.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/inline.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/time.h
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/config.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/errno.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/timer.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/syscall.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/task.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/reg.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/../types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/../inline.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/include.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/uboot/include/exports.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/stdarg.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/uboot/include/_exports.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/fileno.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/swi.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../globals.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/reg.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/timer.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/interrupt.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/psr.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/inline.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/time.h:

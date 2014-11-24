@@ -1,0 +1,15 @@
+ \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/ub_test.o:  \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/ub_test.c \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/sched.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/task.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/config.h
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/sched.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/task.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/config.h:

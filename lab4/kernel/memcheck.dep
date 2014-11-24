@@ -1,0 +1,8 @@
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/memcheck.o:  \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/memcheck.c \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/kernel.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/types.h
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/kernel.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/types.h:

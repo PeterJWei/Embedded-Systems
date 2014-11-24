@@ -1,0 +1,9 @@
+ \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/ctx_switch_asm.o:  \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/ctx_switch_asm.S \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/asm.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/psr.h
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/asm.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/psr.h:

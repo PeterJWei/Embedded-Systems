@@ -21,6 +21,7 @@
 #include <arm/exception.h>
 #include <arm/physmem.h>
 #include <device.h>
+#include "../disable_interrupts.h"
 
 int task_create(task_t* tasks  __attribute__((unused)), size_t num_tasks  __attribute__((unused)))
 {

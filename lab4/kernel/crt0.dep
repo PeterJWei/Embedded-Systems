@@ -1,0 +1,5 @@
+/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/crt0.o:  \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/crt0.S \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/bits/swi.h
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/kernel/include/bits/swi.h:

@@ -1,0 +1,57 @@
+ \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/C_irq_handler.o:  \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/C_irq_handler.c \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/C_irq_handler.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/include.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/uboot/include/exports.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/stdarg.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/uboot/include/_exports.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/errno.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/fileno.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/swi.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../globals.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/reg.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/../types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/../inline.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/timer.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/interrupt.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/read.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/write.h
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/C_irq_handler.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/include.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/uboot/include/exports.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/stdarg.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/uboot/include/_exports.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/errno.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/fileno.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/swi.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../globals.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/reg.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/../types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/../inline.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/timer.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/interrupt.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/read.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/write.h:

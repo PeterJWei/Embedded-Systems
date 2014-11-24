@@ -1,0 +1,15 @@
+ \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/arm/timer.o:  \
+ /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/arm/timer.c \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/timer.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/reg.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/../types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/../inline.h
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/timer.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/reg.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/../types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/../inline.h:
