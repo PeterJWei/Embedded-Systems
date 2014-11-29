@@ -1,6 +1,6 @@
  \
  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/swi/time.o:  \
  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/swi/time.S \
-  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/include/asm.h
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/include/bits/swi.h
 
-/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/include/asm.h:
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/include/bits/swi.h:

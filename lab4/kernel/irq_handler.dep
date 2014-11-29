@@ -1,3 +1,9 @@
  \
  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/irq_handler.o:  \
- /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/irq_handler.S
+ /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/irq_handler.S \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/asm.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/psr.h
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/asm.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/psr.h:
