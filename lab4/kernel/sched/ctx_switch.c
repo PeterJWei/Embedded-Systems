@@ -14,6 +14,7 @@
 #include <kernel.h>
 #include "sched_i.h"
 
+#define DEBUG_MUTEX
 #ifdef DEBUG_MUTEX
 #include <exports.h>
 #endif
@@ -68,6 +69,9 @@ void dispatch_nosave(void)
     tcb_t* t = runqueue_remove(prio);
     cur_tcb = t;
     void *ctx = (void *)(&(t->context));
+    printf("%#x\n", (t->context.r4));
+    printf("%c\n", (char)(t->context.r5));
+    printf("%#x\n", (t->context.r6));
     ctx_switch_half(ctx);
 }
 

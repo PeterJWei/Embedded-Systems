@@ -15,6 +15,7 @@
 #include <arm/reg.h>
 #include <arm/psr.h>
 #include <arm/exception.h>
+#include "include/arm/interrupt.h"
 
 /**
  * @brief Fake device maintainence structure.
@@ -45,9 +46,10 @@ static dev_t devices[NUM_DEVICES];
  */
 void dev_init(void)
 {
+   int i;
    /* the following line is to get rid of the warning and should not be needed	
    devices[0]=devices[0];*/
-   for (int i =0; i<NUM_DEVICES; i++) {
+   for (i =0; i<NUM_DEVICES; i++) {
 	devices[i].sleep_queue=0;
 	devices[i].next_match=dev_freq[i];
    }
@@ -64,7 +66,7 @@ void dev_wait(unsigned int dev /*__attribute__((unused))*/)
 {
 	tcb_t *t = get_cur_tcb();
 	t->sleep_queue=devices[dev].sleep_queue;
-	devices[dev].sleep_queue=task;
+	devices[dev].sleep_queue=t;
 
 	dispatch_sleep();
 }
@@ -80,13 +82,14 @@ void dev_wait(unsigned int dev /*__attribute__((unused))*/)
 void dev_update(unsigned long millis/* __attribute__((unused))*/)
 {
 	tcb_t *t;
+        int i;
 	int r=0;
 
-	for(int i = 0; i<NUM_DEVICES; i++) {
+	for(i = 0; i<NUM_DEVICES; i++) {
 		//if device passed one period
 		if(millis >= devices[i].next_match) {
 			//update match register
-			devices[i].next_match=+=dev_freq[i];
+			devices[i].next_match+=dev_freq[i];
 			//pull task from sleep_queue
 			t=devices[i].sleep_queue;
 			//add tasks to run queue
@@ -99,6 +102,6 @@ void dev_update(unsigned long millis/* __attribute__((unused))*/)
 			devices[i].sleep_queue=0;
 		}
 	}
-	if(r) request_reschedule();
+	//if(r) request_reschedule();
 }
 

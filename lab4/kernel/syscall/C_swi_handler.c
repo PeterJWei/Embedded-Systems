@@ -44,6 +44,7 @@ int C_SWI_Handler(int swiNum, int *regs) {
             break;
         case EVENT_WAIT:
             printf("event wait!\n");
+            count = event_wait((unsigned int)regs[0]);
             break;
         default:
             printf("Error in ref C_SWI_Handler: Invalid SWI number.");

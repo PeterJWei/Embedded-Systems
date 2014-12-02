@@ -38,13 +38,14 @@ int task_create(task_t* tasks  __attribute__((unused)), size_t num_tasks  __attr
     }
     for (i = 0; i < num_tasks-1; i++) {
         for (j = i+1; j < num_tasks; j++) {
-            if (t[i]->T < t[j]->T) {
+            if (t[i]->T > t[j]->T) {
                 swap_tasks(t, i, j);
             }
         }
     }
     printf("hello!\n");
     allocate_tasks(t, num_tasks);
+    printf("hello!\n");
     dispatch_nosave();
     printf("hello!\n");
     return 1;
@@ -52,7 +53,7 @@ int task_create(task_t* tasks  __attribute__((unused)), size_t num_tasks  __attr
 
 int event_wait(unsigned int dev  __attribute__((unused)))
 {
-  return 1; /* remove this line after adding your code */	
+  return -1; /* remove this line after adding your code */	
 }
 
 /* An invalid syscall causes the kernel to exit. */
