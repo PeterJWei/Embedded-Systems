@@ -62,6 +62,7 @@ void allocate_tasks(task_t** tasks  __attribute__((unused)), size_t num_tasks  _
         printf("%#x\n", system_tcb[i].context.r4);
         system_tcb[i].context.r5 = (uint32_t) (tasks[i]->data);
         system_tcb[i].context.r6 = (uint32_t) (tasks[i]->stack_pos);
+        system_tcb[i].context.sp = 0;
         runqueue_add(&(system_tcb[i]), i);
     }
     system_tcb[num_tasks].native_prio = num_tasks;
@@ -69,7 +70,7 @@ void allocate_tasks(task_t** tasks  __attribute__((unused)), size_t num_tasks  _
     system_tcb[num_tasks].holds_lock = 0;
     system_tcb[num_tasks].sleep_queue = NULL;
     system_tcb[num_tasks].context.r4 = (uint32_t) &(idle);
-    system_tcb[num_tasks].context.r5 = (uint32_t) 0;
+    system_tcb[num_tasks].context.r5 = (uint32_t) 'q';
     system_tcb[num_tasks].context.r6 = (uint32_t) 0xa1100000;
     runqueue_add(&(system_tcb[num_tasks]), num_tasks);
 }

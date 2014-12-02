@@ -43,7 +43,6 @@ int C_SWI_Handler(int swiNum, int *regs) {
             printf("mutex unlock!\n");
             break;
         case EVENT_WAIT:
-            printf("event wait!\n");
             count = event_wait((unsigned int)regs[0]);
             break;
         default:

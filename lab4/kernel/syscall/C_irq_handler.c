@@ -9,4 +9,5 @@ void C_IRQ_Handler() {
     uint32_t mr = reg_read(OSTMR_OSMR_ADDR(0)); //read the match register
     reg_write(OSTMR_OSMR_ADDR(0), mr + period); //add 10 ms to the match register
     global_timer += 10; //increment global timer by 10 ms
+//    printf("hello from irq!\n");
 }

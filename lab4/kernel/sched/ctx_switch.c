@@ -17,6 +17,7 @@
 #define DEBUG_MUTEX
 #ifdef DEBUG_MUTEX
 #include <exports.h>
+#include "../syscall/include.h"
 #endif
 
 static __attribute__((unused)) tcb_t* cur_tcb; /* use this if needed */
@@ -69,9 +70,6 @@ void dispatch_nosave(void)
     tcb_t* t = runqueue_remove(prio);
     cur_tcb = t;
     void *ctx = (void *)(&(t->context));
-    printf("%#x\n", (t->context.r4));
-    printf("%c\n", (char)(t->context.r5));
-    printf("%#x\n", (t->context.r6));
     ctx_switch_half(ctx);
 }
 
@@ -90,8 +88,11 @@ void dispatch_sleep(void)
 
     tcb_t* t = runqueue_remove(prio);
     void *ctx = (void *)(&(t->context));
-
-    ctx_switch_full(ctxcur, ctx);
+    printf("%#x\n", (t->context.r4));
+    printf("%c\n", (char)(t->context.r5));
+    printf("%#x\n", (t->context.r6));
+    getc();
+    ctx_switch_full(ctx, ctxcur);
 }
 
 /**
