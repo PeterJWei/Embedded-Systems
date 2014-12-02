@@ -55,7 +55,8 @@ void dispatch_save(void)
 
     runqueue_add(tcur, pcur); //put back the old task into the runnable queue
 
-    ctx_switch_full(ctxcur, ctx);
+    cur_tcb = t;
+    ctx_switch_full(ctx, ctxcur);
 }
 
 /**
@@ -91,7 +92,8 @@ void dispatch_sleep(void)
     printf("%#x\n", (t->context.r4));
     printf("%c\n", (char)(t->context.r5));
     printf("%#x\n", (t->context.r6));
-    getc();
+    printf("%#x\n", (uint32_t)(t->context.sp));
+    cur_tcb = t;
     ctx_switch_full(ctx, ctxcur);
 }
 

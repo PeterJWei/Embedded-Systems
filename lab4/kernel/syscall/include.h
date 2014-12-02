@@ -9,6 +9,8 @@
 #include "../include/arm/reg.h"
 #include "../include/arm/timer.h"
 #include "../include/arm/interrupt.h"
+#include "../include/sched.h"
+#include "../include/device.h"
 // 0xe59ff014 (LDR pc, [pc, 0x14]) --> 0x014 through masking
 #define SWI_VECT_ADDR 0x08
 #define IRQ_VECT_ADDR 0x18

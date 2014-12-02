@@ -41,11 +41,11 @@ FUNC(launch_task)
 /* r0 points to the target context, r1 to the current context. */
 /* add your code to perform a full context switch */
 FUNC(ctx_switch_full)
-@        stmfd r1, {r4-r11, sp, lr}
+        stmfd r1!, {r4-r11}
         mov r2, sp
-        ldmfd r0, {r4-r11}
-@        cmp r0, #0
-@        movne pc, lr
+        ldmfd r0, {r4-r11, sp, lr}
+        cmp sp, #0
+        movne pc, lr
         mov sp, r2
         b launch_task
 
