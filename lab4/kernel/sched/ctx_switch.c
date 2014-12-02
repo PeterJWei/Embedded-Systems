@@ -42,7 +42,18 @@ void dispatch_init(tcb_t* idle __attribute__((unused)))
  */
 void dispatch_save(void)
 {
-	
+    uint8_t pcur = get_cur_prio();
+    tcb_t* tcur = get_cur_tcb();
+    void *ctxcur = (void *)(&(tcur->context));
+
+    uint8_t prio = highest_prio();
+
+    tcb_t* t = runqueue_remove(prio);
+    void *ctx = (void *)(&(t->context));
+
+    runqueue_add(tcur, pcur); //put back the old task into the runnable queue
+
+    ctx_switch_full(ctxcur, ctx);
 }
 
 /**
@@ -53,9 +64,12 @@ void dispatch_save(void)
  */
 void dispatch_nosave(void)
 {
-
+    uint8_t prio = highest_prio();
+    tcb_t* t = runqueue_remove(prio);
+    cur_tcb = t;
+    void *ctx = (void *)(&(t->context));
+    ctx_switch_half(ctx);
 }
-
 
 /**
  * @brief Context switch to the highest priority task that is not this task -- 
@@ -65,7 +79,15 @@ void dispatch_nosave(void)
  */
 void dispatch_sleep(void)
 {
-	
+    tcb_t* tcur = get_cur_tcb();
+    void *ctxcur = (void *)(&(tcur->context));
+
+    uint8_t prio = highest_prio();
+
+    tcb_t* t = runqueue_remove(prio);
+    void *ctx = (void *)(&(t->context));
+
+    ctx_switch_full(ctxcur, ctx);
 }
 
 /**
@@ -73,7 +95,7 @@ void dispatch_sleep(void)
  */
 uint8_t get_cur_prio(void)
 {
-	return 1; //fix this; dummy return to prevent compiler warning
+    return cur_tcb->cur_prio; //fix this; dummy return to prevent compiler warning
 }
 
 /**
@@ -81,5 +103,5 @@ uint8_t get_cur_prio(void)
  */
 tcb_t* get_cur_tcb(void)
 {
-	return (tcb_t *) 0; //fix this; dummy return to prevent compiler warning
+    return cur_tcb;
 }

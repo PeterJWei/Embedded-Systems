@@ -4,6 +4,8 @@
 #include "write.h"
 #include "time.h"
 #include "../check_ic.h"
+#include "../include/task.h"
+#include "../include/syscall.h"
 /* C_SWI_Handler uses SWI number to call the appropriate function. */
 int C_SWI_Handler(int swiNum, int *regs) {
     int count = 0;
@@ -27,6 +29,22 @@ int C_SWI_Handler(int swiNum, int *regs) {
 	case SLEEP_SWI:
 	    sleep_syscall((int)regs[0]);
 	    break;
+        case CREATE_SWI:
+            printf("task create!\n");
+            task_create((task_t *)regs[0], (size_t)regs[1]);
+            break;
+        case MUTEX_CREATE:
+            printf("mutex create!\n");
+            break;
+        case MUTEX_LOCK:
+            printf("mutex lock!\n");
+            break;
+        case MUTEX_UNLOCK:
+            printf("mutex unlock!\n");
+            break;
+        case EVENT_WAIT:
+            printf("event wait!\n");
+            break;
         default:
             printf("Error in ref C_SWI_Handler: Invalid SWI number.");
             count = 0;

@@ -23,9 +23,31 @@
 #include <device.h>
 #include "../disable_interrupts.h"
 
+void swap_tasks(task_t** t, int i, int j) {
+    task_t* temp = t[j];
+    t[j] = t[i];
+    t[i] = temp;
+}
+
 int task_create(task_t* tasks  __attribute__((unused)), size_t num_tasks  __attribute__((unused)))
 {
-  return 1; /* remove this line after adding your code */
+    uint8_t i, j;
+    task_t** t = malloc(sizeof(task_t*) * num_tasks);
+    for (i = 0; i < num_tasks; i++) {
+        t[i] = &tasks[i];
+    }
+    for (i = 0; i < num_tasks-1; i++) {
+        for (j = i+1; j < num_tasks; j++) {
+            if (t[i]->T < t[j]->T) {
+                swap_tasks(t, i, j);
+            }
+        }
+    }
+    printf("hello!\n");
+    allocate_tasks(t, num_tasks);
+    dispatch_nosave();
+    printf("hello!\n");
+    return 1;
 }
 
 int event_wait(unsigned int dev  __attribute__((unused)))

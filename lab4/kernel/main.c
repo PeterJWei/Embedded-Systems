@@ -99,7 +99,6 @@ int kmain(int argc, char** argv, uint32_t table) {
     /** Jump to user program. **/
     int usr_prog_status = 0;
     ic_setup();
-    printf("here\n");
     usr_prog_status = user_setup(spTop);
 
     /** Restore SWI Handler. **/

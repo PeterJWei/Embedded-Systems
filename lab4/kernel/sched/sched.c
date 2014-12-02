@@ -18,6 +18,8 @@
 #include <arm/exception.h>
 #include <arm/physmem.h>
 
+#define NULL 0 
+
 tcb_t system_tcb[OS_MAX_TASKS]; /*allocate memory for system TCBs */
 
 void sched_init(task_t* main_task  __attribute__((unused)))
@@ -50,6 +52,23 @@ static void __attribute__((unused)) idle(void)
  */
 void allocate_tasks(task_t** tasks  __attribute__((unused)), size_t num_tasks  __attribute__((unused)))
 {
-	
+    uint8_t i;
+    for (i = 0; i < num_tasks; i++) {
+        system_tcb[i].native_prio = i;
+        system_tcb[i].cur_prio = i;
+        system_tcb[i].holds_lock = 0;
+        system_tcb[i].sleep_queue = NULL;
+        system_tcb[i].context.r4 = (uint32_t) &(tasks[i]->lambda);
+        system_tcb[i].context.r5 = (uint32_t) (tasks[i]->data);
+        system_tcb[i].context.r6 = (uint32_t) (tasks[i]->stack_pos);
+        runqueue_add(&(system_tcb[i]), i);
+    }
+    system_tcb[num_tasks].native_prio = num_tasks;
+    system_tcb[num_tasks].cur_prio = num_tasks;
+    system_tcb[num_tasks].holds_lock = 0;
+    system_tcb[num_tasks].sleep_queue = NULL;
+    system_tcb[num_tasks].context.r4 = (uint32_t) &(idle);
+    system_tcb[num_tasks].context.r5 = (uint32_t) 0;
+    system_tcb[num_tasks].context.r6 = (uint32_t) 0xa1100000;
+    runqueue_add(&(system_tcb[num_tasks]), num_tasks);
 }
-

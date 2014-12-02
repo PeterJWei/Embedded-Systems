@@ -13,7 +13,7 @@
 #include <sched.h>
 #include "sched_i.h"
 
-
+#define NULL 0
 
 static tcb_t* run_list[OS_MAX_TASKS]  __attribute__((unused));
 
@@ -58,7 +58,14 @@ static uint8_t prio_unmap_table[]  __attribute__((unused)) =
  */
 void runqueue_init(void)
 {
-	
+    int i;
+    for (i = 0; i < OS_MAX_TASKS; i++) {
+        run_list[i] = NULL;
+    }
+    group_run_bits = 0;
+    for (i = 0; i < OS_MAX_TASKS/8; i++) {
+        run_bits[i] = 0;
+    }
 }
 
 /**
@@ -69,9 +76,12 @@ void runqueue_init(void)
  * only requirement is that the run queue for that priority is empty.  This
  * function needs to be externally synchronized.
  */
-void runqueue_add(tcb_t* tcb  __attribute__((unused)), uint8_t prio  __attribute__((unused)))
-{
-	
+void runqueue_add(tcb_t* tcb  __attribute__((unused)), uint8_t prio  __attribute__((unused))) {
+    run_list[prio] = tcb;
+    uint8_t y = prio >> 0x3;
+    uint8_t x = prio & 0x7;
+    group_run_bits = (group_run_bits | (0x1 << y));
+    run_bits[y] = (run_bits[y] | (0x1 << x));
 }
 
 
@@ -82,16 +92,26 @@ void runqueue_add(tcb_t* tcb  __attribute__((unused)), uint8_t prio  __attribute
  *
  * This function needs to be externally synchronized.
  */
-tcb_t* runqueue_remove(uint8_t prio  __attribute__((unused)))
-{
-	return (tcb_t *)1; // fix this; dummy return to prevent warning messages	
+tcb_t* runqueue_remove(uint8_t prio  __attribute__((unused))) {
+    tcb_t* temp = run_list[prio];
+    run_list[prio] = NULL;
+    uint8_t y = prio >> 0x3;
+    uint8_t x = prio & 0x7;
+    group_run_bits = (group_run_bits & (~(0x1 << y)));
+    run_bits[y] = (run_bits[y] & (~(0x1 << x)));
+    return temp;
+}
+
+tcb_t* runqueue_peek(uint8_t prio  __attribute__((unused))) {
+    return run_list[prio];
 }
 
 /**
  * @brief This function examines the run bits and the run queue and returns the
  * priority of the runnable task with the highest priority (lower number).
  */
-uint8_t highest_prio(void)
-{
-	return 1; // fix this; dummy return to prevent warning messages	
+uint8_t highest_prio(void) {
+    uint8_t y = prio_unmap_table[group_run_bits];
+    uint8_t x = prio_unmap_table[run_bits[y]];
+    return (y << 3) + x;
 }
