@@ -45,8 +45,12 @@ static dev_t devices[NUM_DEVICES];
  */
 void dev_init(void)
 {
-   /* the following line is to get rid of the warning and should not be needed */	
-   devices[0]=devices[0];
+   /* the following line is to get rid of the warning and should not be needed	
+   devices[0]=devices[0];*/
+   for (int i =0; i<NUM_DEVICES; i++) {
+	devices[i].sleep_queue=0;
+	devices[i].next_match=dev_freq[i];
+   }
 }
 
 
@@ -56,9 +60,13 @@ void dev_init(void)
  *
  * @param dev  Device number.
  */
-void dev_wait(unsigned int dev __attribute__((unused)))
+void dev_wait(unsigned int dev /*__attribute__((unused))*/)
 {
-	
+	tcb_t *t = get_cur_tcb();
+	t->sleep_queue=devices[dev].sleep_queue;
+	devices[dev].sleep_queue=task;
+
+	dispatch_sleep();
 }
 
 
@@ -69,8 +77,28 @@ void dev_wait(unsigned int dev __attribute__((unused)))
  * interrupt corresponded to the interrupt frequency of a device, this 
  * function should ensure that the task is made ready to run 
  */
-void dev_update(unsigned long millis __attribute__((unused)))
+void dev_update(unsigned long millis/* __attribute__((unused))*/)
 {
-	
+	tcb_t *t;
+	int r=0;
+
+	for(int i = 0; i<NUM_DEVICES; i++) {
+		//if device passed one period
+		if(millis >= devices[i].next_match) {
+			//update match register
+			devices[i].next_match=+=dev_freq[i];
+			//pull task from sleep_queue
+			t=devices[i].sleep_queue;
+			//add tasks to run queue
+			while(t) {
+				runqueue_add(t, t->cur_prio);
+				t=t->sleep_queue;
+				r=1;
+			}
+			//reset sleep queue
+			devices[i].sleep_queue=0;
+		}
+	}
+	if(r) request_reschedule();
 }
 
