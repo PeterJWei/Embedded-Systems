@@ -12,7 +12,7 @@ void C_IRQ_Handler() {
     dev_update(global_timer);
     uint8_t ph = highest_prio();
     uint8_t pcur = get_cur_prio();
-    printf("%d %d\n", ph, pcur);
+//    printf("%d %d\n", ph, pcur);
     if (ph < pcur) {
         dispatch_save();
     }

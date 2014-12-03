@@ -16,6 +16,10 @@
 
     .global swi_handler
 swi_handler:
+    mrs     ip, spsr
+    stmfd   sp, {ip, sp, lr}^
+    add     sp, sp, #-12
+
     sub     sp, sp, #4
     stmfd   sp!, {r0-r12, lr}
 
@@ -50,7 +54,11 @@ swi_handler:
     @ Discard the r0 on the stack (r0 has ret value).
     add     sp, sp, #4
     ldmfd   sp!, {r1-r12, lr}
+    add     sp, sp, #4
+
+    ldmfd   sp, {ip, sp, lr}^
+    add     sp, sp, #12
+    msr     spsr, ip
 
     @ remove space used to store spsr
-    add     sp, sp, #4
     movs    pc, lr

@@ -30,7 +30,6 @@ int C_SWI_Handler(int swiNum, int *regs) {
 	    sleep_syscall((int)regs[0]);
 	    break;
         case CREATE_SWI:
-            printf("task create!\n");
             task_create((task_t *)regs[0], (size_t)regs[1]);
             break;
         case MUTEX_CREATE:
