@@ -102,6 +102,5 @@ void dev_update(unsigned long millis/* __attribute__((unused))*/)
 			devices[i].sleep_queue=0;
 		}
 	}
-	//if(r) request_reschedule();
 }
 
