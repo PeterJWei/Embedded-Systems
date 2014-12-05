@@ -17,7 +17,6 @@
 #include <bits/errno.h>
 #include <arm/psr.h>
 #include <arm/exception.h>
-#define DEBUG_MUTEX
 #ifdef DEBUG_MUTEX
 #include <exports.h> // temp
 #endif
@@ -32,7 +31,6 @@ void mutex_init()
         gtMutex[i].bAvailable = 0;
         gtMutex[i].bLock = 0;
     }
-    printf("mutexes initiated!\n");
 }
 
 int mutex_create(void)
@@ -71,8 +69,6 @@ int mutex_lock(int mutex  __attribute__((unused)))
     //if not locked, lock it and now we hold the lock
     gtMutex[mutex].bLock = 1;
     t->holds_lock = 1;
-    //CEILING!?
-    t->cur_prio = 0;
     gtMutex[mutex].pHolding_Tcb = t;
     return 0;
 }
@@ -93,7 +89,6 @@ int mutex_unlock(int mutex  __attribute__((unused)))
     tcb_t *next_t = gtMutex[mutex].pSleep_queue;
     gtMutex[mutex].pSleep_queue = next_t->sleep_queue;
     t->holds_lock = 0;
-    t->cur_prio = t->native_prio;
     runqueue_add(next_t, next_t->native_prio);
     return 0;
 }

@@ -16,7 +16,6 @@
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/uboot/include/_exports.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/fileno.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/swi.h \
-  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/lock.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/types.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../globals.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/reg.h \
@@ -57,8 +56,6 @@
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/fileno.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/swi.h:
-
-/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/lock.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/types.h:
 

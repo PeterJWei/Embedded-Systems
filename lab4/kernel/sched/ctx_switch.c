@@ -59,7 +59,7 @@ void dispatch_save(void)
     void *ctx = (void *)(&(t->context));
 //    printf("%#x\n", (uint32_t)t);
 //    printf("%#x\n", (uint32_t)tcur);
-   hexdump(ctx, 0x30);
+//    hexdump(ctx, 0x30);
 
     runqueue_add(tcur, pcur); //put back the old task into the runnable queue
 
@@ -88,7 +88,7 @@ void dispatch_nosave(void)
 //    printf("nosave pointers %#x\n", (uint32_t)(ctx));
 //    printf("%#x\n", (uint32_t)(t->context.r6));
 //    printf("%#x\n", (uint32_t)t);
-    hexdump(ctx, 0x30);
+//    hexdump(ctx, 0x30);
 //    KSHIGH = t->kstack_high;
     ctx_switch_half(ctx);
 }
@@ -114,7 +114,7 @@ void dispatch_sleep(void)
     void *ctx = (void *)(&(t->context));
 //    printf("%#x\n", (uint32_t)t);
 //    printf("%#x\n", (uint32_t)tcur);
-    hexdump(ctx, 0x30);
+//    hexdump(ctx, 0x30);
 //    printf("sleep pointers %#x %#x\n", (uint32_t)(ctxcur), (uint32_t)(ctx));
 //    printf("%#x\n", (uint32_t)(t->context.lr));
 //    printf("%#x\n\n", (uint32_t)(t->context.sp));

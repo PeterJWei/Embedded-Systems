@@ -34,15 +34,12 @@ int C_SWI_Handler(int swiNum, int *regs) {
             task_create((task_t *)regs[0], (size_t)regs[1]);
             break;
         case MUTEX_CREATE:
-            count = mutex_create();
             printf("mutex create!\n");
             break;
         case MUTEX_LOCK:
-            count = mutex_lock((int)regs[0]);
             printf("mutex lock!\n");
             break;
         case MUTEX_UNLOCK:
-            count = mutex_unlock((int)regs[0]);
             printf("mutex unlock!\n");
             break;
         case EVENT_WAIT:
