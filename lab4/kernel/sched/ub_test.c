@@ -41,35 +41,17 @@ double uRef[64]= {1.00000, 0.82842, 0.77976, 0.75682, 0.74349, 0.73477, 0.72862,
 
 int assign_schedule(task_t** tasks  __attribute__((unused)), size_t num_tasks  __attribute__((unused)))
 {
-
-	// fix this; dummy return to prevent compiler k_t temp;
-//    task_t temp;
     size_t i,j;
-    //uint8_t ub=0;
-    //uint8_t max = num_tasks*((2 << (1/num_tasks)) -1);
-
-    //Bubble sort the tasks
-/*    for (i =0; i <num_tasks; i++) {
-        //ub+=((*tasks)[i].C)/((*tasks)[i].T);
-        for(j=0;j<num_tasks;j++) {
-            if(tasks[j]->T > tasks[j+1].T) {
-                temp=(*tasks)[j];
-                (*tasks)[j]=(*tasks)[j+1];
-                (*tasks)[j+1]=temp;
-            }
-        }
-    }*/
-    //ub test
     for(i = 0; i < num_tasks; i++) {
 	double ub = 0.0;
 	for(j=0; j <= i; j++) {
-		ub += ((double)(tasks[j]->C))/((double)(tasks[j]->T));
+	    //total cpu utilization
+	    ub += ((double)(tasks[j]->C))/((double)(tasks[j]->T));
 	}
+	//adding worst case
 	ub += ((double)(tasks[i]->B))/((double)(tasks[i]->T));
-
+	//comparing to ref table 
 	if(ub >= uRef[i]) return 0;
     }
     return 1;
-    //if(ub <=max) return 1;
-    //else return 0;
 }
