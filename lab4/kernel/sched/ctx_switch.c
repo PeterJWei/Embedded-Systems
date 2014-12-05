@@ -115,6 +115,7 @@ void dispatch_sleep(void)
 //    printf("%#x\n", (uint32_t)t);
 //    printf("%#x\n", (uint32_t)tcur);
 //    hexdump(ctx, 0x30);
+//    getc();
 //    printf("sleep pointers %#x %#x\n", (uint32_t)(ctxcur), (uint32_t)(ctx));
 //    printf("%#x\n", (uint32_t)(t->context.lr));
 //    printf("%#x\n\n", (uint32_t)(t->context.sp));

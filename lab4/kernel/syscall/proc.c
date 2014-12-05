@@ -57,6 +57,7 @@ int task_create(task_t* tasks  __attribute__((unused)), size_t num_tasks  __attr
 int event_wait(unsigned int dev  __attribute__((unused)))
 {
     if (dev > 3) {
+        printf("EINVAL!\n");
         return -EINVAL;
     }
     dev_wait(dev);
