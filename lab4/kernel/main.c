@@ -12,6 +12,7 @@
 #include "syscall/read.h"
 #include "syscall/write.h"
 
+#include <lock.h>
 #include <arm/psr.h>
 #include <arm/exception.h>
 #include <arm/interrupt.h>
@@ -99,6 +100,7 @@ int kmain(int argc, char** argv, uint32_t table) {
     /** Jump to user program. **/
     int usr_prog_status = 0;
     ic_setup();
+    mutex_init();
     usr_prog_status = user_setup(spTop);
 
     /** Restore SWI Handler. **/
