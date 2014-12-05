@@ -16,6 +16,7 @@
 #include <arm/exception.h>
 #include <arm/interrupt.h>
 #include <arm/timer.h>
+#include <lock.h>
 #include "include/types.h"
 
 #include "syscall/include.h"
@@ -99,6 +100,7 @@ int kmain(int argc, char** argv, uint32_t table) {
     /** Jump to user program. **/
     int usr_prog_status = 0;
     ic_setup();
+    mutex_init();
     usr_prog_status = user_setup(spTop);
 
     /** Restore SWI Handler. **/

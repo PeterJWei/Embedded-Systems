@@ -4,6 +4,7 @@
 #include <bits/errno.h>
 #include <bits/fileno.h>
 #include <bits/swi.h>
+#include "../include/lock.h"
 #include "../include/types.h"
 #include "../globals.h"
 #include "../include/arm/reg.h"

@@ -17,6 +17,7 @@
 #include <bits/errno.h>
 #include <arm/psr.h>
 #include <arm/exception.h>
+#define DEBUG_MUTEX
 #ifdef DEBUG_MUTEX
 #include <exports.h> // temp
 #endif
@@ -31,6 +32,7 @@ void mutex_init()
         gtMutex[i].bAvailable = 0;
         gtMutex[i].bLock = 0;
     }
+    printf("mutexes initiated!\n");
 }
 
 int mutex_create(void)

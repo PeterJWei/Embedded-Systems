@@ -20,8 +20,12 @@
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/exception.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/interrupt.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/timer.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/lock.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/task.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/config.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/types.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/include.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/lock.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/types.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../globals.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/reg.h \
@@ -30,8 +34,6 @@
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/timer.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/interrupt.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/sched.h \
-  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/task.h \
-  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/config.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/device.h
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/uboot/include/exports.h:
@@ -74,9 +76,17 @@
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/timer.h:
 
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/lock.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/task.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/config.h:
+
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/types.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/include.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/lock.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/types.h:
 
@@ -93,9 +103,5 @@
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/interrupt.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/sched.h:
-
-/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/task.h:
-
-/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/config.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/device.h:
