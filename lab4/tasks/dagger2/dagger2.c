@@ -57,6 +57,7 @@ void fun3(void* str)
 		putchar(0x6c);
 		putchar(0x6c);
 		putchar(0x6f);
+//                while(1) {}
                 mutex_unlock(0);
 		putchar((int)str);
 		if (event_wait(2) < 0)
