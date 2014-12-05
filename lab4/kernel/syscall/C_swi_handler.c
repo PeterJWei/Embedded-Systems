@@ -36,7 +36,7 @@ int C_SWI_Handler(int swiNum, int *regs) {
 #ifdef SWI_IDEN
             printf("task_create!\n");
 #endif
-            task_create((task_t *)regs[0], (size_t)regs[1]);
+            count = task_create((task_t *)regs[0], (size_t)regs[1]);
             break;
         case MUTEX_CREATE:
 #ifdef SWI_IDEN
@@ -68,6 +68,9 @@ int C_SWI_Handler(int swiNum, int *regs) {
             invalid_syscall(swiNum);
 //            exit_handler(BAD_CODE); // never returns
     }
-//    printf("count! %d\n", count);
+    if (count < 0) {
+        printf("error %d\n", count);
+        panic("got error %d\n", count);
+    }
     return count;
 }

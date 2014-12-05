@@ -22,6 +22,7 @@
 #include <arm/physmem.h>
 #include <device.h>
 #include "../disable_interrupts.h"
+#include "include.h"
 
 void swap_tasks(task_t** t, int i, int j) {
     task_t* temp = t[j];
@@ -60,7 +61,6 @@ int task_create(task_t* tasks  __attribute__((unused)), size_t num_tasks  __attr
 int event_wait(unsigned int dev  __attribute__((unused)))
 {
     if (dev > 3) {
-        printf("EINVAL!\n");
         return -EINVAL;
     }
     dev_wait(dev);

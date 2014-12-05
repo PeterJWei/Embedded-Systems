@@ -1,6 +1,7 @@
 #ifndef INCLUDE_H
 #define INCLUDE_H
 #include <exports.h>
+#include "../include/assert.h"
 #include <bits/errno.h>
 #include <bits/fileno.h>
 #include <bits/swi.h>

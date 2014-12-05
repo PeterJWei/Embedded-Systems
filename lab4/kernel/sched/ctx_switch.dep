@@ -12,6 +12,7 @@
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/sched.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/task.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/include.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/../include/assert.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/errno.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/fileno.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/swi.h \
@@ -46,6 +47,8 @@
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/task.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/include.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/../include/assert.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/errno.h:
 

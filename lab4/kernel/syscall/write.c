@@ -8,9 +8,9 @@ ssize_t write_handler(int fd, const void *buf, size_t count) {
     // Check for invalid memory range or file descriptors
     if (check_mem((char *) buf, (int) count, SDRAM_START, SDRAM_END) == FALSE &&
         check_mem((char *) buf, (int) count, SFROM_START, SFROM_END) == FALSE) {
-//        exit_handler(-EFAULT);
+        panic("got error %d\n", -EFAULT);
     } else if (fd != STDOUT_FILENO) {
-//        exit_handler(-EBADF);
+        panic("got error %d\n", -EBADF);
     }
 
     char *buffer = (char *) buf;
