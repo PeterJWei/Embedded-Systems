@@ -44,31 +44,18 @@ void dispatch_init(tcb_t* idle __attribute__((unused)))
  */
 void dispatch_save(void)
 {
-//    printf("save\n");
     uint8_t pcur = get_cur_prio();
     tcb_t* tcur = get_cur_tcb();
-    void *ctxcur = (void *)(&(tcur->context));
-//    hexdump(ctxcur, 0x30);
-//    printf("%#x\n", (uint32_t)(tcur->context.lr));
-//    printf("%#x\n", (uint32_t)(tcur->context.sp));
+    void *ctxcur = (void *)(&(tcur->context)); //get our current context
 
     uint8_t prio = highest_prio();
-//    printf("%#x\n", prio);
 
-    tcb_t* t = runqueue_remove(prio);
+    tcb_t* t = runqueue_remove(prio); //remove the new context
     void *ctx = (void *)(&(t->context));
-//    printf("%#x\n", (uint32_t)t);
-//    printf("%#x\n", (uint32_t)tcur);
-//    hexdump(ctx, 0x30);
 
     runqueue_add(tcur, pcur); //put back the old task into the runnable queue
 
-    cur_tcb = t;
-//    KSHIGH = t->kstack_high;
-//    printf("save pointers %#x %#x\n", (uint32_t)(ctxcur), (uint32_t)(ctx));
-//    printf("%#x\n", (uint32_t)(t->context.lr));
-//    printf("%#x\n\n", (uint32_t)(t->context.sp));
-//    printf("%#x\n", (uint32_t)(t->context.r6));
+    cur_tcb = t; //change to the new tcb
     ctx_switch_full(ctx, ctxcur);
 }
 
@@ -80,16 +67,10 @@ void dispatch_save(void)
  */
 void dispatch_nosave(void)
 {
-//    printf("nosave\n");
-    uint8_t prio = highest_prio();
-    tcb_t* t = runqueue_remove(prio);
-    cur_tcb = t;
-    void *ctx = (void *)(&(t->context));
-//    printf("nosave pointers %#x\n", (uint32_t)(ctx));
-//    printf("%#x\n", (uint32_t)(t->context.r6));
-//    printf("%#x\n", (uint32_t)t);
-//    hexdump(ctx, 0x30);
-//    KSHIGH = t->kstack_high;
+    uint8_t prio = highest_prio(); //switch to the highest priority task
+    tcb_t* t = runqueue_remove(prio); //remove from the run queue
+    cur_tcb = t; //change to that task
+    void *ctx = (void *)(&(t->context)); //get the context
     ctx_switch_half(ctx);
 }
 
@@ -101,27 +82,14 @@ void dispatch_nosave(void)
  */
 void dispatch_sleep(void)
 {
-//    printf("sleep\n");
-    tcb_t* tcur = get_cur_tcb();
-    void *ctxcur = (void *)(&(tcur->context));
+    tcb_t* tcur = get_cur_tcb(); //get the current tcb
+    void *ctxcur = (void *)(&(tcur->context)); //get the current context
 
-//    hexdump(ctxcur, 0x30);
- //   printf("%#x\n", (uint32_t)(tcur->context.lr));
- //   printf("%#x\n", (uint32_t)(tcur->context.sp));
-    uint8_t prio = highest_prio();
+    uint8_t prio = highest_prio(); //get the next task
 
     tcb_t* t = runqueue_remove(prio);
-    void *ctx = (void *)(&(t->context));
-//    printf("%#x\n", (uint32_t)t);
-//    printf("%#x\n", (uint32_t)tcur);
-//    hexdump(ctx, 0x30);
-//    getc();
-//    printf("sleep pointers %#x %#x\n", (uint32_t)(ctxcur), (uint32_t)(ctx));
-//    printf("%#x\n", (uint32_t)(t->context.lr));
-//    printf("%#x\n\n", (uint32_t)(t->context.sp));
-//    printf("%#x\n", (uint32_t)(t->context.r6));
+    void *ctx = (void *)(&(t->context)); //get the context
     cur_tcb = t;
-//    KSHIGH = t->kstack_high;
     ctx_switch_full(ctx, ctxcur);
 }
 
@@ -130,7 +98,7 @@ void dispatch_sleep(void)
  */
 uint8_t get_cur_prio(void)
 {
-    return cur_tcb->cur_prio; //fix this; dummy return to prevent compiler warning
+    return cur_tcb->cur_prio;
 }
 
 /**

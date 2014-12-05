@@ -98,10 +98,10 @@ int mutex_unlock(int mutex  __attribute__((unused)))
     if (!gtMutex[mutex].bLock == 1 || (gtMutex[mutex].pHolding_Tcb != t)) {
         return -EPERM;
     }
-    gtMutex[mutex].bLock = 0;
-    gtMutex[mutex].pHolding_Tcb = 0;
+    gtMutex[mutex].bLock = 0; //unlock
+    gtMutex[mutex].pHolding_Tcb = 0; //clear tcb holding
     tcb_t *next_t = gtMutex[mutex].pSleep_queue;
-    if (next_t) {
+    if (next_t) { //if we find a tcb waiting for the mutex, add to runnable queue
         gtMutex[mutex].pSleep_queue = next_t->sleep_queue;
 #ifdef DEBUG_MUTEX
         printf("%d taken off sleep queue\n", next_t->native_prio);
@@ -109,16 +109,16 @@ int mutex_unlock(int mutex  __attribute__((unused)))
         runqueue_add(next_t, next_t->native_prio);
     }
 #ifdef MULTIMUTEX
-    for (i = 0; i < OS_NUM_MUTEX; i++) {
+    for (i = 0; i < OS_NUM_MUTEX; i++) { //look for if we are holding more mutexes
         if (!gtMutex[i].bAvailable) {
-            t->holds_lock = 0;
+            t->holds_lock = 0; //if we reach end of valid mutexes
             break;
         }
-        if (gtMutex[mutex].bLock == 1 && gtMutex[mutex].pHolding_Tcb == t) {
+        if (gtMutex[mutex].bLock == 1 && gtMutex[mutex].pHolding_Tcb == t) { //if we are holding a mutex
             t->holds_lock = 1;
             break;
         }
-        t->holds_lock = 0;
+        t->holds_lock = 0; //we aren't holding any mutexes
     }
 #endif
 #ifndef MULTIMUTEX

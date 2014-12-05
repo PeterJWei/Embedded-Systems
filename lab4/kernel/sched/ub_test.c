@@ -44,7 +44,7 @@ int assign_schedule(task_t** tasks  __attribute__((unused)), size_t num_tasks  _
     size_t i,j;
     for(i = 0; i < num_tasks; i++) {
 	double ub = 0.0;
-	for(j=0; j <= i; j++) {
+	for(j = 0; j <= i; j++) {
 	    //total cpu utilization
 	    ub += ((double)(tasks[j]->C))/((double)(tasks[j]->T));
 	}

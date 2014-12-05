@@ -59,12 +59,12 @@ static uint8_t prio_unmap_table[]  __attribute__((unused)) =
 void runqueue_init(void)
 {
     int i;
-    for (i = 0; i < OS_MAX_TASKS; i++) {
+    for (i = 0; i < OS_MAX_TASKS; i++) { //clear run list
         run_list[i] = NULL;
     }
-    group_run_bits = 0;
+    group_run_bits = 0; //clear grb
     for (i = 0; i < OS_MAX_TASKS/8; i++) {
-        run_bits[i] = 0;
+        run_bits[i] = 0; //clear rb
     }
 }
 
@@ -77,12 +77,11 @@ void runqueue_init(void)
  * function needs to be externally synchronized.
  */
 void runqueue_add(tcb_t* tcb  __attribute__((unused)), uint8_t prio  __attribute__((unused))) {
-    run_list[prio] = tcb;
+    run_list[prio] = tcb; //add tcb to the list
     uint8_t y = prio >> 0x3;
-    uint8_t x = prio & 0x7;
+    uint8_t x = prio & 0x7; 
     group_run_bits = (group_run_bits | (0x1 << y));
     run_bits[y] = (run_bits[y] | (0x1 << x));
-//    printf("add %x %x %x %x %x %x %x %x %x\n", group_run_bits, run_bits[0], run_bits[1], run_bits[2], run_bits[3], run_bits[4], run_bits[5], run_bits[6], run_bits[7]);
 }
 
 
@@ -94,15 +93,14 @@ void runqueue_add(tcb_t* tcb  __attribute__((unused)), uint8_t prio  __attribute
  * This function needs to be externally synchronized.
  */
 tcb_t* runqueue_remove(uint8_t prio  __attribute__((unused))) {
-    tcb_t* temp = run_list[prio];
-    run_list[prio] = NULL;
+    tcb_t* temp = run_list[prio]; //get the tcb from the list
+    run_list[prio] = NULL; //clear that priority
     uint8_t y = prio >> 0x3;
     uint8_t x = prio & 0x7;
     run_bits[y] = (run_bits[y] & (~(0x1 << x)));
-    if (!run_bits[y]) {
+    if (!run_bits[y]) { //only clear that grb if run bits is 0
         group_run_bits = (group_run_bits & (~(0x1 << y)));
     }
-    //printf("rem %x %x %x %x %x %x %x %x %x\n", group_run_bits, run_bits[0], run_bits[1], run_bits[2], run_bits[3], run_bits[4], run_bits[5], run_bits[6], run_bits[7]);
     return temp;
 }
 
@@ -115,11 +113,9 @@ tcb_t* runqueue_peek(uint8_t prio  __attribute__((unused))) {
  * priority of the runnable task with the highest priority (lower number).
  */
 uint8_t highest_prio(void) {
-    if (group_run_bits == 0) {
-    //    printf("no runnable tasks!\n");
-        return get_cur_prio();
+    if (group_run_bits == 0) { //if no tasks on the runnable queue (such as if idle is running)
+        return get_cur_prio(); //the highest priority is the task running currently
     }
-    //printf("hp %x %x %x %x %x %x %x %x %x\n", group_run_bits, run_bits[0], run_bits[1], run_bits[2], run_bits[3], run_bits[4], run_bits[5], run_bits[6], run_bits[7]);
     uint8_t y = prio_unmap_table[group_run_bits];
     uint8_t x = prio_unmap_table[run_bits[y]];
     return (y << 3) + x;

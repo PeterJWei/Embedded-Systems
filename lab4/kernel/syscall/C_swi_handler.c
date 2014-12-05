@@ -22,9 +22,6 @@ int C_SWI_Handler(int swiNum, int *regs) {
             count = write_handler((int) regs[0], (void *) regs[1], (size_t) regs[2]);
             break;
         // void exit(int status);
-//        case EXIT_SWI:
-//            exit_handler((int) regs[0]); // never returns
-//            break;
 	case TIME_SWI:
 	    count = time_syscall();
 //            printf("got count: %d\n", (unsigned int)count);

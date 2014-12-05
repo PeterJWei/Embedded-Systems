@@ -58,20 +58,20 @@ void allocate_tasks(task_t** tasks  __attribute__((unused)), size_t num_tasks  _
         system_tcb[i].cur_prio = i;
         system_tcb[i].holds_lock = 0;
         system_tcb[i].sleep_queue = NULL;
-        system_tcb[i].context.r4 = (uint32_t) (tasks[i]->lambda);
-        system_tcb[i].context.r5 = (uint32_t) (tasks[i]->data);
-        system_tcb[i].context.r6 = (uint32_t) (tasks[i]->stack_pos);
-        system_tcb[i].context.lr = launch_task;
-        system_tcb[i].context.sp = (void *)(&(system_tcb[i].kstack_high[0]));
-        runqueue_add(&(system_tcb[i]), i);
+        system_tcb[i].context.r4 = (uint32_t) (tasks[i]->lambda); //function name
+        system_tcb[i].context.r5 = (uint32_t) (tasks[i]->data); //function args
+        system_tcb[i].context.r6 = (uint32_t) (tasks[i]->stack_pos); //function stack pointer
+        system_tcb[i].context.lr = launch_task; //set entry
+        system_tcb[i].context.sp = (void *)(&(system_tcb[i].kstack_high[0])); //set kernel stack
+        runqueue_add(&(system_tcb[i]), i); //add to runqueue
     }
     system_tcb[num_tasks].native_prio = num_tasks;
     system_tcb[num_tasks].cur_prio = num_tasks;
     system_tcb[num_tasks].holds_lock = 0;
     system_tcb[num_tasks].sleep_queue = NULL;
-    system_tcb[num_tasks].context.r4 = (uint32_t) &(idle);
+    system_tcb[num_tasks].context.r4 = (uint32_t) &(idle); //setup idle task
     system_tcb[num_tasks].context.r5 = (uint32_t) 'q';
-    system_tcb[num_tasks].context.r6 = (uint32_t) 0xa1100000;
+    system_tcb[num_tasks].context.r6 = (uint32_t) 0xa1100000; //arbitrary stack position
     system_tcb[num_tasks].context.lr = launch_task;
     system_tcb[num_tasks].context.sp = (void *)(&(system_tcb[num_tasks].kstack_high[0]));
     runqueue_add(&(system_tcb[num_tasks]), num_tasks);
