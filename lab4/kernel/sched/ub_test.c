@@ -29,9 +29,5 @@
  */
 int assign_schedule(task_t** tasks  __attribute__((unused)), size_t num_tasks  __attribute__((unused)))
 {
-
-	return 1; // fix this; dummy return to prevent compiler warnings	
+    return 1; // fix this; dummy return to prevent compiler warnings	
 }
-	
-
-
