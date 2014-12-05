@@ -32,11 +32,11 @@ void mutex_init()
         gtMutex[i].bAvailable = 0;
         gtMutex[i].bLock = 0;
     }
-    printf("mutex_init!\n");
 }
 
 int mutex_create(void)
 {
+    disable_interrupts();
     int i;
     for (i = 0; i < OS_NUM_MUTEX; i++) {
         //if mutex is not available
@@ -45,14 +45,17 @@ int mutex_create(void)
             gtMutex[i].bAvailable = 1;
             //unlock
             gtMutex[i].bLock = 0;
+            enable_interrupts();
             return i;
         }
     }
+    enable_interrupts();
     return -ENOMEM;
 }
 
 int mutex_lock(int mutex  __attribute__((unused)))
 {
+    disable_interrupts();
     tcb_t *t = get_cur_tcb();
     //if mutex number is incorrect or if the mutex is not available
     if (mutex > OS_NUM_MUTEX || !gtMutex[mutex].bAvailable) {
@@ -63,20 +66,24 @@ int mutex_lock(int mutex  __attribute__((unused)))
         return -EDEADLOCK; //if task already holding the lock
     } else if (gtMutex[mutex].bLock == 1) {
         //if someone else is holding the lock
+        printf("process %d holding lock!\n", gtMutex[mutex].pHolding_Tcb->native_prio);
         t->sleep_queue = gtMutex[mutex].pSleep_queue;
         gtMutex[mutex].pSleep_queue = t;
         //put on sleep queue
+        enable_interrupts();
         dispatch_sleep();
     }
     //if not locked, lock it and now we hold the lock
     gtMutex[mutex].bLock = 1;
     t->holds_lock = 1;
     gtMutex[mutex].pHolding_Tcb = t;
+    enable_interrupts();
     return 0;
 }
 
 int mutex_unlock(int mutex  __attribute__((unused)))
 {
+    disable_interrupts();
     tcb_t *t = get_cur_tcb();
     //if mutex number is incorrect or if the mutex is not available
     if (mutex > OS_NUM_MUTEX || !gtMutex[mutex].bAvailable) {
@@ -89,9 +96,12 @@ int mutex_unlock(int mutex  __attribute__((unused)))
     gtMutex[mutex].bLock = 0;
     gtMutex[mutex].pHolding_Tcb = 0;
     tcb_t *next_t = gtMutex[mutex].pSleep_queue;
-    gtMutex[mutex].pSleep_queue = next_t->sleep_queue;
+    if (next_t) {
+        gtMutex[mutex].pSleep_queue = next_t->sleep_queue;
+        runqueue_add(next_t, next_t->native_prio);
+    }
     t->holds_lock = 0;
-    runqueue_add(next_t, next_t->native_prio);
+    enable_interrupts();
     return 0;
 }
 

@@ -1,5 +1,6 @@
 #include "C_swi_handler.h"
 #include "include.h"
+#include "../include/lock.h"
 #include "read.h"
 #include "write.h"
 #include "time.h"
@@ -34,13 +35,13 @@ int C_SWI_Handler(int swiNum, int *regs) {
             task_create((task_t *)regs[0], (size_t)regs[1]);
             break;
         case MUTEX_CREATE:
-            printf("mutex create!\n");
+            count = mutex_create();
             break;
         case MUTEX_LOCK:
-            printf("mutex lock!\n");
+            count = mutex_lock((int)regs[0]);
             break;
         case MUTEX_UNLOCK:
-            printf("mutex unlock!\n");
+            count = mutex_unlock((int)regs[0]);
             break;
         case EVENT_WAIT:
             count = event_wait((unsigned int)regs[0]);

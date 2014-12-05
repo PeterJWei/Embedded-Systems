@@ -33,6 +33,14 @@ void fun2(void* str)
 {
 	while(1)
 	{
+                mutex_lock(0);
+		putchar(0x77);
+		putchar(0x6f);
+		putchar(0x72);
+		putchar(0x6c);
+		putchar(0x64);
+                putchar(0xA);
+                mutex_unlock(0);
 		putchar((int)str);
 		if (event_wait(1) < 0)
 			panic("Dev 1 failed");
@@ -43,9 +51,13 @@ void fun3(void* str)
 {
 	while(1)
 	{
-                mutex_lock(1);
+                mutex_lock(0);
 		putchar(0x68);
-                mutex_unlock(1);
+		putchar(0x65);
+		putchar(0x6c);
+		putchar(0x6c);
+		putchar(0x6f);
+                mutex_unlock(0);
 		putchar((int)str);
 		if (event_wait(2) < 0)
 			panic("Dev 2 failed");
@@ -54,6 +66,7 @@ void fun3(void* str)
 
 int main(int argc, char** argv)
 {
+        mutex_create();
 	task_t tasks[2];
 	tasks[0].lambda = fun1;
 	tasks[0].data = (void*)'@';
