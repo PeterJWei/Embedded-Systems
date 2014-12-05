@@ -49,6 +49,9 @@ int task_create(task_t* tasks  __attribute__((unused)), size_t num_tasks  __attr
             }
         }
     }
+    if (!assign_schedule(t, num_tasks)) {
+        return -ESCHED;
+    }
     allocate_tasks(t, num_tasks);
     dispatch_nosave();
     return 1;
