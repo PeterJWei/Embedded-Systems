@@ -43,9 +43,9 @@ void fun3(void* str)
 {
 	while(1)
 	{
-/*                mutex_lock(1);
-		putchar((int)'h');
-                mutex_unlock(1);*/
+                mutex_lock(1);
+		putchar(0x68);
+                mutex_unlock(1);
 		putchar((int)str);
 		if (event_wait(2) < 0)
 			panic("Dev 2 failed");
