@@ -34,9 +34,9 @@ int task_create(task_t* tasks  __attribute__((unused)), size_t num_tasks  __attr
     if (num_tasks > 64) {
         return -EINVAL;
     }
-//    if (!valid_addr(tasks, (sizeof(task_t)*num_tasks), RAM_START_ADDR, RAM_END_ADDR)) {
-//        return -EFAULT;
-//    }
+    if (!valid_addr(tasks, (sizeof(task_t)*num_tasks), RAM_START_ADDR, RAM_END_ADDR)) {
+        return -EFAULT;
+    }
     uint8_t i, j;
     task_t** t = malloc(sizeof(task_t*) * num_tasks);
     for (i = 0; i < num_tasks; i++) {

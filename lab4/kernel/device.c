@@ -81,24 +81,26 @@ void dev_wait(unsigned int dev /*__attribute__((unused))*/)
  */
 void dev_update(unsigned long millis/* __attribute__((unused))*/)
 {
-	tcb_t *t;
-        int i;
+    tcb_t *t;
+    int i;
 
-	for(i = 0; i<NUM_DEVICES; i++) {
-		//if device passed one period
-		if(millis >= devices[i].next_match) {
-			//update match register
-			devices[i].next_match+=dev_freq[i];
-			//pull task from sleep_queue
-			t=devices[i].sleep_queue;
-			//add tasks to run queue
-			while(t) {
-				runqueue_add(t, t->native_prio);
-				t=t->sleep_queue;
-			}
-			//reset sleep queue
-			devices[i].sleep_queue=0;
-		}
-	}
+    for(i = 0; i<NUM_DEVICES; i++) {
+        //if device passed one period
+        if(millis >= devices[i].next_match) {
+            //update match register
+            while (millis >= devices[i].next_match) {
+                devices[i].next_match+=dev_freq[i];
+            }
+            //pull task from sleep_queue
+            t=devices[i].sleep_queue;
+            //add tasks to run queue
+            while(t) {
+                runqueue_add(t, t->native_prio);
+                t=t->sleep_queue;
+            }
+            //reset sleep queue
+        devices[i].sleep_queue=0;
+    }
+}
 }
 
