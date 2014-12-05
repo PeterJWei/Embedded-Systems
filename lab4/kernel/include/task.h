@@ -25,7 +25,7 @@ struct task
 	void*         stack_pos;   /**< The starting position of the task's sp */
 	unsigned long C;           /**< The worst-case computation time */
 	unsigned long T;           /**< The task's period */
-        unsigned long B;
+	unsigned long B;           /**< The task's period */
 };
 typedef struct task task_t;
 

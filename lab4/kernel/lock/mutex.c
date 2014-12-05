@@ -17,7 +17,6 @@
 #include <bits/errno.h>
 #include <arm/psr.h>
 #include <arm/exception.h>
-#define DEBUG_MUTEX
 #ifdef DEBUG_MUTEX
 #include <exports.h> // temp
 #endif
@@ -66,7 +65,9 @@ int mutex_lock(int mutex  __attribute__((unused)))
         return -EDEADLOCK; //if task already holding the lock
     } else if (gtMutex[mutex].bLock == 1) {
         //if someone else is holding the lock
+#ifdef DEBUG_MUTEX
         printf("process %d holding lock!\n", gtMutex[mutex].pHolding_Tcb->native_prio);
+#endif
         t->sleep_queue = gtMutex[mutex].pSleep_queue;
         gtMutex[mutex].pSleep_queue = t;
         //put on sleep queue
@@ -81,8 +82,12 @@ int mutex_lock(int mutex  __attribute__((unused)))
     return 0;
 }
 
+#define MULTIMUTEX
 int mutex_unlock(int mutex  __attribute__((unused)))
 {
+#ifdef MULTIMUTEX
+    int i;
+#endif
     disable_interrupts();
     tcb_t *t = get_cur_tcb();
     //if mutex number is incorrect or if the mutex is not available
@@ -98,9 +103,27 @@ int mutex_unlock(int mutex  __attribute__((unused)))
     tcb_t *next_t = gtMutex[mutex].pSleep_queue;
     if (next_t) {
         gtMutex[mutex].pSleep_queue = next_t->sleep_queue;
+#ifdef DEBUG_MUTEX
+        printf("%d taken off sleep queue\n", next_t->native_prio);
+#endif
         runqueue_add(next_t, next_t->native_prio);
     }
+#ifdef MULTIMUTEX
+    for (i = 0; i < OS_NUM_MUTEX; i++) {
+        if (!gtMutex[i].bAvailable) {
+            t->holds_lock = 0;
+            break;
+        }
+        if (gtMutex[mutex].bLock == 1 && gtMutex[mutex].pHolding_Tcb == t) {
+            t->holds_lock = 1;
+            break;
+        }
+        t->holds_lock = 0;
+    }
+#endif
+#ifndef MULTIMUTEX
     t->holds_lock = 0;
+#endif
     enable_interrupts();
     return 0;
 }
