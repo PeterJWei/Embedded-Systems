@@ -82,6 +82,7 @@ void runqueue_add(tcb_t* tcb  __attribute__((unused)), uint8_t prio  __attribute
     uint8_t x = prio & 0x7;
     group_run_bits = (group_run_bits | (0x1 << y));
     run_bits[y] = (run_bits[y] | (0x1 << x));
+//    printf("add %x %x %x %x %x %x %x %x %x\n", group_run_bits, run_bits[0], run_bits[1], run_bits[2], run_bits[3], run_bits[4], run_bits[5], run_bits[6], run_bits[7]);
 }
 
 
@@ -97,8 +98,11 @@ tcb_t* runqueue_remove(uint8_t prio  __attribute__((unused))) {
     run_list[prio] = NULL;
     uint8_t y = prio >> 0x3;
     uint8_t x = prio & 0x7;
-    group_run_bits = (group_run_bits & (~(0x1 << y)));
     run_bits[y] = (run_bits[y] & (~(0x1 << x)));
+    if (!run_bits[y]) {
+        group_run_bits = (group_run_bits & (~(0x1 << y)));
+    }
+    //printf("rem %x %x %x %x %x %x %x %x %x\n", group_run_bits, run_bits[0], run_bits[1], run_bits[2], run_bits[3], run_bits[4], run_bits[5], run_bits[6], run_bits[7]);
     return temp;
 }
 
@@ -111,6 +115,11 @@ tcb_t* runqueue_peek(uint8_t prio  __attribute__((unused))) {
  * priority of the runnable task with the highest priority (lower number).
  */
 uint8_t highest_prio(void) {
+    if (group_run_bits == 0) {
+    //    printf("no runnable tasks!\n");
+        return get_cur_prio();
+    }
+    //printf("hp %x %x %x %x %x %x %x %x %x\n", group_run_bits, run_bits[0], run_bits[1], run_bits[2], run_bits[3], run_bits[4], run_bits[5], run_bits[6], run_bits[7]);
     uint8_t y = prio_unmap_table[group_run_bits];
     uint8_t x = prio_unmap_table[run_bits[y]];
     return (y << 3) + x;

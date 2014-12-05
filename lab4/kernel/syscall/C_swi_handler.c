@@ -9,6 +9,7 @@
 /* C_SWI_Handler uses SWI number to call the appropriate function. */
 int C_SWI_Handler(int swiNum, int *regs) {
     int count = 0;
+//    printf("hello!\n");
     switch (swiNum) {
         // ssize_t read(int fd, void *buf, size_t count);
         case READ_SWI:

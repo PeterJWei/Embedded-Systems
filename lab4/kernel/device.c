@@ -83,7 +83,6 @@ void dev_update(unsigned long millis/* __attribute__((unused))*/)
 {
 	tcb_t *t;
         int i;
-	int r=0;
 
 	for(i = 0; i<NUM_DEVICES; i++) {
 		//if device passed one period
@@ -94,9 +93,8 @@ void dev_update(unsigned long millis/* __attribute__((unused))*/)
 			t=devices[i].sleep_queue;
 			//add tasks to run queue
 			while(t) {
-				runqueue_add(t, t->cur_prio);
+				runqueue_add(t, t->native_prio);
 				t=t->sleep_queue;
-				r=1;
 			}
 			//reset sleep queue
 			devices[i].sleep_queue=0;

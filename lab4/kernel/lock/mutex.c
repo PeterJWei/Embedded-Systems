@@ -25,22 +25,58 @@ mutex_t gtMutex[OS_NUM_MUTEX];
 
 void mutex_init()
 {
-	
+    int i;
+    for (i = 0; i < OS_NUM_MUTEX; i++) {
+        gtMutex[i].bAvailable = 0;
+        gtMutex[i].bLock = 0;
+    }
 }
 
 int mutex_create(void)
 {
-	
-	return 1; // fix this to return the correct value
+    int i;
+    for (i = 0; i < OS_NUM_MUTEX; i++) {
+        if (!gtMutex[i].bAvailable) {
+            gtMutex[i].bAvailable = 1;
+            gtMutex[i].bLock = 0;
+            return i;
+        }
+    }
+    return -ENOMEM;
 }
 
 int mutex_lock(int mutex  __attribute__((unused)))
 {
-	return 1; // fix this to return the correct value
+    tcb_t *t = get_cur_tcb();
+    if (mutex > OS_NUM_MUTEX || !gtMutex[mutex].bAvailable) {
+        return -EINVAL;
+    }
+    if (gtMutex[mutex].bLock == 1 && gtMutex[mutex].pHolding_Tcb == t) {
+            return -EDEADLOCK; //if task already holding the lock
+    } else if (gtMutex[mutex].bLock == 1) {
+        t->sleep_queue = gtMutex[mutex].pSleep_queue;
+        gtMutex[mutex].pSleep_queue = t;
+        dispatch_sleep();
+    }
+    gtMutex[mutex].bLock = 1;
+    gtMutex[mutex].pHolding_Tcb = t;
+    return 0;
 }
 
 int mutex_unlock(int mutex  __attribute__((unused)))
 {
-	return 1; // fix this to return the correct value
+    tcb_t *t = get_cur_tcb();
+    if (mutex > OS_NUM_MUTEX || !gtMutex[mutex].bAvailable) {
+        return -EINVAL;
+    }
+    if (!gtMutex[mutex].bLock == 1 || (gtMutex[mutex].pHolding_Tcb != t)) {
+            return -EPERM; //if task already holding the lock
+    }
+    gtMutex[mutex].bLock = 0;
+    gtMutex[mutex].pHolding_Tcb = 0;
+    tcb_t *next_t = gtMutex[mutex].pSleep_queue;
+    gtMutex[mutex].pSleep_queue = next_t->sleep_queue;
+    runqueue_add(next_t, next_t->native_prio);
+    return 0;
 }
 

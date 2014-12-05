@@ -49,11 +49,8 @@ int task_create(task_t* tasks  __attribute__((unused)), size_t num_tasks  __attr
             }
         }
     }
-    printf("hello!\n");
     allocate_tasks(t, num_tasks);
-    printf("hello!\n");
     dispatch_nosave();
-    printf("hello!\n");
     return 1;
 }
 

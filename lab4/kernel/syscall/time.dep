@@ -21,6 +21,8 @@
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/reg.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/timer.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/interrupt.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/sched.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/device.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/psr.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/inline.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/time.h
@@ -64,6 +66,10 @@
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/timer.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/interrupt.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/sched.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/device.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/psr.h:
 

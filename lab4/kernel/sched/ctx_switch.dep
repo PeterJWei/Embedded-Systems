@@ -10,7 +10,20 @@
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/kernel.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/sched_i.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/sched.h \
-  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/task.h
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/task.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/include.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/errno.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/fileno.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/swi.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/../include/types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/../globals.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/../include/arm/reg.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/../include/arm/../types.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/../include/arm/../inline.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/../include/arm/timer.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/../include/arm/interrupt.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/../include/sched.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/../include/device.h
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/types.h:
 
@@ -31,3 +44,29 @@
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/sched.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/task.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/include.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/errno.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/fileno.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/bits/swi.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/../include/types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/../globals.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/../include/arm/reg.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/../include/arm/../types.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/../include/arm/../inline.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/../include/arm/timer.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/../include/arm/interrupt.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/../include/sched.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/sched/../syscall/../include/device.h:

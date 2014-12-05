@@ -1,6 +1,6 @@
  \
  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/swi/event_wait.o:  \
  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/swi/event_wait.S \
-  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/include/asm.h
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/include/bits/swi.h
 
-/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/include/asm.h:
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/tasks/libc/include/bits/swi.h:

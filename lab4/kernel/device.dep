@@ -14,7 +14,8 @@
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/../inline.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/psr.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/inline.h \
-  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/exception.h
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/exception.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/interrupt.h
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/types.h:
 
@@ -45,3 +46,5 @@
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/inline.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/exception.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/arm/interrupt.h:

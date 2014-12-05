@@ -16,6 +16,10 @@
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/../inline.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/timer.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/interrupt.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/sched.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/task.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/config.h \
+  /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/device.h \
   /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/write.h
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/include.h:
@@ -47,5 +51,13 @@
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/timer.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/arm/interrupt.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/sched.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/task.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/include/config.h:
+
+/home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/../include/device.h:
 
 /home/peter/Desktop/Embedded-Systems/lab3-support/lab4/kernel/syscall/write.h:
