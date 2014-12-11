@@ -14,7 +14,7 @@ MAKEFLAGS += -rR
 # Make sure there are no name clashes.  Add new ones here if you make your own
 # tests (which I recommend you do).
 
-PACKAGES = dagger dagger2 rot13 splat hello cyclone mutex_chaser simple_mutex failub stress sys_err inversion
+PACKAGES = mutex_chaser inversion failub
 
 .PHONY: all package clean clobber $(PACKAGES)
 all: package kernel

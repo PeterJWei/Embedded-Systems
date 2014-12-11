@@ -17,6 +17,7 @@
 #include <bits/errno.h>
 #include <arm/psr.h>
 #include <arm/exception.h>
+#define DEBUG_MUTEX
 #ifdef DEBUG_MUTEX
 #include <exports.h> // temp
 #endif
@@ -68,8 +69,13 @@ int mutex_lock(int mutex  __attribute__((unused)))
 #ifdef DEBUG_MUTEX
         printf("process %d holding lock!\n", gtMutex[mutex].pHolding_Tcb->native_prio);
 #endif
-        t->sleep_queue = gtMutex[mutex].pSleep_queue;
-        gtMutex[mutex].pSleep_queue = t;
+        tcb_t *t_hold = gtMutex[mutex].pSleep_queue;
+        while (t_hold->sleep_queue) {
+            t_hold = t_hold->sleep_queue;
+        }
+        t_hold->sleep_queue = t;
+//        t->sleep_queue = gtMutex[mutex].pSleep_queue;
+//        gtMutex[mutex].pSleep_queue = t;
         //put on sleep queue
         enable_interrupts();
         dispatch_sleep();
@@ -77,6 +83,7 @@ int mutex_lock(int mutex  __attribute__((unused)))
     //if not locked, lock it and now we hold the lock
     gtMutex[mutex].bLock = 1;
     t->holds_lock = 1;
+    t->cur_prio = 0;
     gtMutex[mutex].pHolding_Tcb = t;
     enable_interrupts();
     return 0;
@@ -92,10 +99,14 @@ int mutex_unlock(int mutex  __attribute__((unused)))
     tcb_t *t = get_cur_tcb();
     //if mutex number is incorrect or if the mutex is not available
     if (mutex > OS_NUM_MUTEX || !gtMutex[mutex].bAvailable) {
+        printf("not av\n");
         return -EINVAL;
     }
     //if mutex is not held by us or unlocked
     if (!gtMutex[mutex].bLock == 1 || (gtMutex[mutex].pHolding_Tcb != t)) {
+        if (!gtMutex[mutex].bLock == 1) {
+            printf("not held\n");
+        }
         return -EPERM;
     }
     gtMutex[mutex].bLock = 0; //unlock
@@ -112,13 +123,16 @@ int mutex_unlock(int mutex  __attribute__((unused)))
     for (i = 0; i < OS_NUM_MUTEX; i++) { //look for if we are holding more mutexes
         if (!gtMutex[i].bAvailable) {
             t->holds_lock = 0; //if we reach end of valid mutexes
+            t->cur_prio = t->native_prio;
             break;
         }
         if (gtMutex[mutex].bLock == 1 && gtMutex[mutex].pHolding_Tcb == t) { //if we are holding a mutex
             t->holds_lock = 1;
+            t->cur_prio = 0;
             break;
         }
         t->holds_lock = 0; //we aren't holding any mutexes
+        t->cur_prio = t->native_prio;
     }
 #endif
 #ifndef MULTIMUTEX

@@ -65,9 +65,9 @@ int C_SWI_Handler(int swiNum, int *regs) {
             invalid_syscall(swiNum);
 //            exit_handler(BAD_CODE); // never returns
     }
-    if (count < 0) {
+/*    if (count < 0) {
         printf("error %d\n", count);
         panic("got error %d\n", count);
-    }
+    }*/
     return count;
 }

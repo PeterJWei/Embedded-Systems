@@ -65,6 +65,7 @@ void dev_init(void)
 void dev_wait(unsigned int dev /*__attribute__((unused))*/)
 {
 	tcb_t *t = get_cur_tcb();
+        
 	t->sleep_queue=devices[dev].sleep_queue;
 	devices[dev].sleep_queue=t;
 
